@@ -1,0 +1,196 @@
+
+.signin-div{
+  border-radius:4px;
+  background-color: var(--ion-color-light)  !important;
+}
+select{
+  background-color: var(--ion-color-light)  !important;
+  border:none !important;
+  margin-left: -15px;
+}
+
+
+
+input[type="text"] {
+  width: 100%;
+  border: 2px solid #F4F7FA;
+  background-color: transparent;
+  border-radius: 5px;
+  // margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--ion-color-primary) ;
+  box-shadow: 0 0 8px 0 var(--ion-color-primary) ;
+}
+
+.inputWithIcon input[type="text"] {
+  padding-left: 40px;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  padding: 9px 8px;
+  color: #aaa;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.inputWithIcon i :hover{
+  color: var(--ion-color-primary) ;
+}
+
+.inputWithIcon input[type="text"]:focus + i {
+  color: var(--ion-color-primary) ;
+}
+
+.inputWithIcon.inputIconBg i {
+  background-color: #aaa;
+  color: var(--ion-color-light) ;
+  padding: 9px 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.inputWithIcon.inputIconBg input[type="text"]:focus + i {
+  color: var(--ion-color-light) ;
+  background-color: var(--ion-color-primary) ;
+}
+
+#seller-dropdwon{
+width:95%;
+height:42px;
+position: relative;
+display: flex;
+border-radius: .25em;
+overflow: hidden;
+border: 1px solid #ccc !important;
+// box-shadow: 1px 1px 1px 1px #ccc;
+// margin-left: -15%;
+}
+.select::after {
+content: '\25BC';
+position: absolute;
+top: -8px;
+right: 5px;
+padding: 1em;
+background-color: var(--ion-color-light) ;
+color:var(--ion-color-primary) 
+;
+transition: .5s all ease;
+pointer-events: none;
+border-radius: 2px;
+}
+.setalarm-btn{
+  border-radius: 5px !important;
+  text-align: center !important;
+  background: var(--ion-color-secondary);
+color:var(--ion-color-light);
+font-size: 20px;
+font-weight: bold;
+width:75% !important;
+}
+.search-btn{
+  border-radius: 5px !important;
+  text-align: center !important;
+  background: var(--ion-color-secondary) ;
+color:var(--ion-color-light) ;
+height: 42px;
+width: 50px;
+margin-left: -20px;
+border-radius: 6px;
+
+}
+
+ion-segment{
+    --height:50px;
+    --background: #fff !important;
+}
+/* Custom Icon Segment MD */
+.md .custom-icon {
+  --indicator-color: lightgray !important;
+}
+
+.md .segment-facebook {
+  --background-hover: rgba(59, 89, 153, 0.04);
+  --color-activated: var(--ion-color-primary) ;
+  --color-checked: var(--ion-color-primary);
+}
+
+.md .segment-instagram {
+  --background-hover: rgba(228, 64, 95, 0.04);
+  --color-activated: var(--ion-color-primary);
+  --color-checked: var(--ion-color-primary);
+}
+
+.md .segment-slack {
+  --background-hover: rgba(58, 175, 133, 0.04);
+  --color-activated: var(--ion-color-primary);
+  --color-checked: var(--ion-color-primary);
+}
+
+/* Custom Icon Segment iOS */
+//   .ios .custom-icon ion-segment-button {
+//     --border-width: 0;
+//   }
+
+.ios .segment-facebook {
+  --background-hover: rgba(59, 89, 153, 0.04);
+  --color-activated: var(--ion-color-primary);
+  --color-checked: var(--ion-color-primary);
+  // --background-activated: #FF6000;
+  // --background-checked: #FF6000;
+}
+
+.ios .segment-instagram {
+  --background-hover: rgba(228, 64, 95, 0.04);
+  --color-activated: var(--ion-color-primary);
+  --color-checked: var(--ion-color-primary);
+  // --background-hover: rgba(228, 64, 95, 0.1);
+  // --background-activated: #FF6000;
+  // --background-checked: #FF6000;
+}
+
+.ios .segment-slack {
+  --color: var(--ion-color-primary);
+  // --color-checked: #ffffff;
+  // --background-hover: rgba(58, 175, 133, 0.1);
+  // --background-activated: rgba(58, 175, 133, 0.16);
+  // --background-checked: #3aaf85;
+}
+
+.custom-icon ion-icon {
+  font-size: 44px;
+}
+
+.custom-icon{
+  border-radius: 50px !important;
+  height:40px !important;
+}
+
+#productCard{
+width: 95% !important;
+}
+
+
+ion-content {
+  background-color:var(--ion-color-light) !important;
+  // background: linear-gradient(to bottom, #8cdbe2
+  // 0%, #d1f2e7
+  // 100%) !important;
+
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+      display: none;
+  }
+}

@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'https://dhya.in/24Hrs/api',
+  
+  // firebaseConfig : {
+  //   apiKey: "AIzaSyAod1HC8Uhiw-1A-tIqK-QP4sUwBwDF0BM",
+  //   authDomain: "429707768959-dtsdjegmqfpgt0fhfosoq8at5ielt33a.apps.googleusercontent.com",
+  //   databaseURL: "***********************",
+  //   projectId: "hrs-b4daa",
+  //   storageBucket: "hrs-b4daa.appspot.com",
+  //   messagingSenderId: "**********",
+  //   appId: "1:429707768959:android:ccddb9e48302aaeea7bb4a"
+  //   }
 };
 
 /*

@@ -1,0 +1,125 @@
+<!------------ Header  ---------------->
+<ion-toolbar color="light">
+  <ion-buttons slot="start">
+    <ion-menu-button style="margin-top:15px;color:#121212" autoHide="false">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 7H19" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+        <path d="M5 12H15" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+        <path d="M5 17H11" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </ion-menu-button>
+  </ion-buttons>
+
+
+
+  <div class="row">
+    <div class="col-4">
+      <h5 style="color:#121212;margin-top:10px"><b></b></h5>
+    </div>
+    <div class="col-8  mx-5" style="text-align: right;width: 100%;">
+      <svg (click)="searchPage()" style="margin-left: -2%;margin-top:5% !important;margin-right:25%" width="25"
+        height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#121212" stroke-width="2" />
+        <path
+          d="M11 8C10.606 8 10.2159 8.0776 9.85195 8.22836C9.48797 8.37913 9.15726 8.6001 8.87868 8.87868C8.6001 9.15726 8.37913 9.48797 8.22836 9.85195C8.0776 10.2159 8 10.606 8 11"
+          stroke="#CCD2E3" stroke-width="2" stroke-linecap="round" />
+        <path d="M20 20L17 17" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+      </svg>
+
+      <!-- <ion-badge style="border-radius: 50%;margin-left: -14px ;color:#eb154b ;font-size: 12px;" color="light">10</ion-badge> -->
+
+    </div>
+  </div>
+</ion-toolbar>
+
+<ion-content>
+  <div class="container">
+    <h3 class="mx-2"><b>Notifications</b>
+      <svg style="margin:3px;" width="26" height="26" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z"
+          fill="black" />
+        <path
+          d="M9 17C9 17.394 9.0776 17.7841 9.22836 18.1481C9.37913 18.512 9.6001 18.8427 9.87868 19.1213C10.1573 19.3999 10.488 19.6209 10.8519 19.7716C11.2159 19.9224 11.606 20 12 20C12.394 20 12.7841 19.9224 13.1481 19.7716C13.512 19.6209 13.8427 19.3999 14.1213 19.1213C14.3999 18.8427 14.6209 18.512 14.7716 18.1481C14.9224 17.7841 15 17.394 15 17L12 17H9Z"
+          fill="black" />
+        <circle cx="18" cy="6" r="2.5" fill="#eb154b" stroke="#eb154b" />
+      </svg>
+    </h3>
+    <div *ngFor="let  notification of notificationList" class=" card mt-4">
+      <div class="row">
+        <div class="col-12">
+          <img style="margin: 7px;" height="30px" width="30px" src="{{notification.store_logo}}" alt="">
+          <span>{{notification.store_name}}/ {{notification.product}}</span>
+        </div>
+        <div class="col-12">
+          <p style="font-size:10px;margin:10px;">{{notification.description}}</p>
+        </div>
+        <div class="col-12 ion-text-right">
+          <span class="ion-text-center p-2"><span style="font-size: 14px;padding: 5px;" class="dot">{{notification.offer}}%
+              off</span></span>
+    
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-5">
+          <p style="margin:5px;font-size: 10px;">
+            <svg width="20" height="18" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.9116 3.42642V1.81135H20.5929V0.22644H15.5488V1.81135H17.2302V3.42642C14.4736 3.62501 12.0001 4.79208 10.1921 6.56606H3.66697V8.15044H8.86504C8.52445 8.65143 8.22897 9.18153 7.98298 9.73587H1.98559V11.3202H7.43614C7.30667 11.8354 7.21773 12.3647 7.1739 12.9057H0.304199V14.4906H7.17384C7.21773 15.0316 7.30662 15.5609 7.43608 16.0755H1.98559V17.6604H7.98298C8.22891 18.2147 8.52445 18.7448 8.86504 19.2453H3.66697V20.8302H10.1921C12.1821 22.7828 14.9784 24 18.0709 24C24.0971 24 28.9999 19.3786 28.9999 13.6981C28.9999 8.28426 24.5466 3.83242 18.9116 3.42642ZM27.2799 14.4906C26.8787 18.666 23.3412 22.0006 18.9116 22.3787V20.8302H17.2302V22.3787C12.8005 22.0006 9.26297 18.666 8.86184 14.4906H10.5046V12.9057H8.86184C9.26297 8.73025 12.8005 5.39566 17.2302 5.01756V6.56606H18.9116V5.01756C23.3412 5.39566 26.8787 8.73025 27.2799 12.9057H25.6371V14.4906H27.2799Z"
+                fill="#5F5F5F" />
+              <path
+                d="M15.5488 13.6981C15.5488 15.009 16.6802 16.0755 18.0709 16.0755C19.0607 16.0755 19.9634 15.5259 20.3705 14.6754L23.1146 8.94385L17.0341 11.5305C16.1318 11.9144 15.5488 12.7652 15.5488 13.6981ZM17.7258 12.9751L19.7527 12.1128L18.838 14.0235C18.7021 14.3072 18.401 14.4906 18.0709 14.4906C17.6074 14.4906 17.2302 14.1351 17.2302 13.6981C17.2302 13.387 17.4248 13.1032 17.7258 12.9751Z"
+                fill="#5F5F5F" />
+            </svg>
+            {{notification.offer_time}}
+          </p>
+        </div>
+        <div class="col-7">
+          <p style="margin:5px;font-size: 10px;" class="product-name">Date/Time: <span>{{notification.created_at | date:
+              'MMMM d'}}/ {{notification.created_at | date: 'h :mm a'}}</span></p>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let  notification of notificationListOtherOffer" class=" card mt-4">
+      <div class="row">
+        <div class="col-12">
+          <img style="margin: 7px;" height="30px" width="30px" src="{{notification.store_logo}}" alt="">
+          <span>{{notification.store_name}}/ {{notification.product}}</span>
+        </div>
+        <div class="col-12">
+          <p style="font-size:10px;margin:10px;">{{notification.description}}</p>
+        </div>
+        <div class="col-12 ion-text-right">
+          <span class="ion-text-center p-2"><span
+              style="font-size: 14px;padding: 5px;" class="dot">{{notification.other_offer}}</span></span>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-5">
+          <p style="margin:5px;font-size: 10px;">
+            <svg width="20" height="18" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.9116 3.42642V1.81135H20.5929V0.22644H15.5488V1.81135H17.2302V3.42642C14.4736 3.62501 12.0001 4.79208 10.1921 6.56606H3.66697V8.15044H8.86504C8.52445 8.65143 8.22897 9.18153 7.98298 9.73587H1.98559V11.3202H7.43614C7.30667 11.8354 7.21773 12.3647 7.1739 12.9057H0.304199V14.4906H7.17384C7.21773 15.0316 7.30662 15.5609 7.43608 16.0755H1.98559V17.6604H7.98298C8.22891 18.2147 8.52445 18.7448 8.86504 19.2453H3.66697V20.8302H10.1921C12.1821 22.7828 14.9784 24 18.0709 24C24.0971 24 28.9999 19.3786 28.9999 13.6981C28.9999 8.28426 24.5466 3.83242 18.9116 3.42642ZM27.2799 14.4906C26.8787 18.666 23.3412 22.0006 18.9116 22.3787V20.8302H17.2302V22.3787C12.8005 22.0006 9.26297 18.666 8.86184 14.4906H10.5046V12.9057H8.86184C9.26297 8.73025 12.8005 5.39566 17.2302 5.01756V6.56606H18.9116V5.01756C23.3412 5.39566 26.8787 8.73025 27.2799 12.9057H25.6371V14.4906H27.2799Z"
+                fill="#5F5F5F" />
+              <path
+                d="M15.5488 13.6981C15.5488 15.009 16.6802 16.0755 18.0709 16.0755C19.0607 16.0755 19.9634 15.5259 20.3705 14.6754L23.1146 8.94385L17.0341 11.5305C16.1318 11.9144 15.5488 12.7652 15.5488 13.6981ZM17.7258 12.9751L19.7527 12.1128L18.838 14.0235C18.7021 14.3072 18.401 14.4906 18.0709 14.4906C17.6074 14.4906 17.2302 14.1351 17.2302 13.6981C17.2302 13.387 17.4248 13.1032 17.7258 12.9751Z"
+                fill="#5F5F5F" />
+            </svg>
+            {{notification.offer_time}}
+          </p>
+        </div>
+        <div class="col-7">
+          <p style="margin:5px;font-size: 10px;" class="product-name">Date/Time: <span>{{notification.created_at | date:
+              'MMMM d'}}/ {{notification.created_at | date: 'h :mm a'}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isShown" style="margin-top: 50%;">
+    <img src="assets/gif/empty.gif" alt="">
+  </div>
+</ion-content>

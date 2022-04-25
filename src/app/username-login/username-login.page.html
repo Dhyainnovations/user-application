@@ -1,0 +1,49 @@
+<ion-content class="ion-padding">
+  <div class="welcomecard p-3" style="margin-top: 55%;">
+  <div *ngIf="LoginAccount">
+    <div class="title">
+      <div class="row">
+        <div class="col-10">
+          <h4><b>Login</b></h4>
+        </div>
+        <div class="col-2">
+          <div class="ion-margin-top ion-text-center">
+            <svg (click)="dismiss()" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9" fill="red" fill-opacity="0.25" />
+              <path d="M16 8L8 16" stroke="white" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round" />
+              <path d="M8 8L16 16" stroke="white" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <p>Lets get started</p>
+    </div>
+
+    <div class="row">
+      <div class="col-{{MobInputcolSize}}">
+        <ion-input style="color: #000000;" [(ngModel)]="mailid" placeholder="Enter Your Mail ID" class="primary-input"
+          (keyup)="mailidCheckFalse()"></ion-input>
+        <p class="small" style="color: #EB154B;" *ngIf="isNotEmailAlert">Enter Valid Mail ID</p>
+      </div>
+    </div>
+
+
+    <ion-input style="color: #000000;" [(ngModel)]="password" placeholder="Enter Your Password" type="password"
+      class="primary-input"></ion-input>
+    <p class="small ion-text-right" (click)="forgotpassword()">Forgot Password ?</p>
+    <div class="ion-margin-top">
+      <ion-button expand="block" color="dark" (click)="signIn()" style="margin-top: -10px;">LOGIN</ion-button>
+      <p class="text-center small">New User ? <b (click)="signup()">Sign Up</b></p>
+    </div>
+  </div>
+  <div *ngIf="VerifyAccount">
+    <b>
+      <p class="small">Verify Your Account : </p>
+    </b>
+    <ion-input style="color: #000000;" [(ngModel)]="mobilenumber" placeholder="Enter Your SignUp Phone Number"
+      type="number" class="primary-input"></ion-input>
+    <ion-button expand="block" color="dark" (click)="verifyAccount()">VERIFY</ion-button>
+  </div>
+</div>
+</ion-content>

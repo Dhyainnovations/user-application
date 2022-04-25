@@ -1,0 +1,77 @@
+<ion-content class="ion-padding" >
+  <div class="welcomecard p-3" style="margin-top: 25%;" >
+    <div class="row">
+      <div class="col-9">
+        <h2 class="mx-3" ><b>Signup</b></h2>
+
+      </div>
+
+      <div class="col-3 ion-text-center">
+        <svg (click)="navigateHome()" style="margin-top:12px;cursor:pointer" width="24" height="27"
+          viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d_1056_2574)">
+            <path d="M18 6L6 18" stroke="#EB154B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 6L18 18" stroke="#EB154B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <filter id="filter0_d_1056_2574" x="-4" y="0" width="32" height="32" filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+              <feOffset dy="4" />
+              <feGaussianBlur stdDeviation="2" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1056_2574" />
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1056_2574" result="shape" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+    </div>
+    <div class="row ">
+      <div class="col-12">
+        <p class="get-started mt-2 mx-3"><b>Getting Started</b></p>
+        <p class="create-account mx-3 ">Create an account to continue!</p>
+      </div>
+     
+
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-{{MobInputcolSize}}">
+        <ion-input style="color: #000000;" [(ngModel)]="username" (keyup)="usernameCheckFalse()"
+          placeholder="Enter Your User Name" class="primary-input mt-3"></ion-input>
+        <p class="small" style="color: #EB154B;" *ngIf="isUserNameAlert">Enter Your Username</p>
+
+        <ion-input style="color: #000000;" [(ngModel)]="mailid" (keyup)="mailidCheckFalse()"
+          placeholder="Enter Your Mail ID" class="primary-input mt-3"></ion-input>
+        <p class="small" style="color: #EB154B;" *ngIf="isNotEmailAlert">Enter Valid Mail ID</p>
+
+        <ion-input style="color: #000000;" [(ngModel)]="mobileNumber" (keyup)="MobileNumberCheckFalse()"
+          placeholder="Enter Your Mobile Number" class="primary-input mt-3" maxlength="10" (keypress)="numberOnly($event)" type="text"></ion-input>
+        <p class="small" style="color: #EB154B;" *ngIf="ValidNumber">Enter Valid Mobile Number</p>
+
+        <ion-input style="color: #000000;" [(ngModel)]="password" (keyup)="passwordCheckFalse()"
+          placeholder="Enter Your Password" class="primary-input mt-3" type="password"></ion-input>
+        <p class="small" style="color:#EB154B;" *ngIf="passwordCheck">Your password must be 8-16
+          characters, and include at least one lowercse letter, one uppercase letter, and a number</p>
+      </div>
+    </div>
+
+
+
+
+  <div class="ion-margin-top">
+    <ion-button [disabled]="otp == '' " expand="block" color="dark" (click)="signUp()">SIGN UP</ion-button>
+    <p class="text-center small mt-4">Already User ? <b (click)="signin()">Sign In</b></p>
+  </div>
+
+</div>
+
+
+</ion-content>

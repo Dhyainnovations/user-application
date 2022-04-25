@@ -1,0 +1,47 @@
+.title {
+    margin-top: -5%;
+    margin-bottom: 30px;
+}
+
+.title h4 {
+    color: var(--ion-color-dark);
+}
+
+.title p {
+    margin-top: 0 !important;
+    color: #999999;
+    font-size: small;
+}
+
+.forget a {
+    font-size: small !important;
+}
+.welcomecard{
+    background: var(--ion-color-light);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.otp-btn{
+    color:var(--ion-color-light);
+    background-color: var(--ion-color-secondary);
+    border: none !important;
+    font-size: 14px;
+    text-align: center;
+    height:78%;
+    border-radius: 5px;
+}
+
+ion-content {
+    background-color:var(--ion-color-light) !important;
+    // background: linear-gradient(to bottom, darkturquoise
+    // 0%, #d1f2e7
+    // 100%) !important;
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  }
+  

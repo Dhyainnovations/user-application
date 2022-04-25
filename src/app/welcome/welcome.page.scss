@@ -1,0 +1,35 @@
+.logo {
+    width: 50%;
+    margin: 20% 0 20% 0;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.title p {
+    margin-top: 0 !important;
+}
+
+.welcomecard{
+    margin-top: 5%;
+    background: rgba(49, 38, 38, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.2px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+ion-content {
+    background: url("../../assets/background.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;  
+  
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  }

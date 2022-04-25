@@ -1,0 +1,108 @@
+.get-started {
+    font-size: 20px;
+    color    : #4d4848;
+    margin   : 8px;
+}
+
+.myproduct-div{
+    position: absolute;
+    top:18%;
+    background-color:  var(--ion-color-light);
+    border:1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #ebe6e6;
+    width:96% !important;
+    margin:5px;
+    
+  }
+  input[type=text] {
+    font-size: 15px;
+    margin: 0 5px;
+    margin-top: 18px !important;
+    width: 90%;
+    box-sizing: border-box;
+    border: none;
+    background-color:  var(--ion-color-light);
+    border-bottom: 2px solid  var(--ion-color-primary);
+  }
+  input:focus {
+    outline: none !important;
+    // border:1px solid #23d5ab !important;
+    // box-shadow: 0 0 2px #23d5ab;
+    border-bottom: 2px solid  var(--ion-color-primary);
+  }
+  .update-btn{
+    border-radius: 5px !important;
+  background: linear-gradient(to left, #535252
+  0%, #0D0D0D
+  100%);
+    color: var(--ion-color-light);
+    height:25px;
+    width:55%;
+    text-align: center;
+    border:1px solid  var(--ion-color-light);
+    font-size: 12px !important;
+    padding: 3px;
+    margin:5px !important;
+    margin-left: 35px !important ;
+}
+.skip-btn{
+  border-radius: 5px !important;
+  background-color:  var(--ion-color-light);
+  color: var(--ion-color-primary);
+  height:25px;
+  width:25%;
+  text-align: center;
+  border:1px solid  var(--ion-color-light);
+  font-size: 13px !important;
+  padding: 3px;
+  margin:5px !important;
+}
+lottie-player{
+    cursor: pointer;
+}
+
+select{
+  border: 1px solid  var(--ion-color-light);
+ 
+}
+.row{
+    margin-bottom: 10px !important;
+}
+
+
+ion-content {
+  --background: var(--ion-color-light) !important;
+  overflow: auto;
+  &::-webkit-scrollbar {
+      display: none;
+  }
+}
+
+
+
+modal-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media not all and (min-height: 600px) and (min-width: 768px) {
+    ion-modal ion-backdrop {
+      visibility: hidden;
+    }
+  }
+  
+  @media only screen and (min-height: 0px) and (min-width: 0px) {
+    .modal-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+
+  

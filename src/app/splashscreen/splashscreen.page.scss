@@ -1,0 +1,20 @@
+ion-content {
+    background-color:  var(--ion-color-primary) !important;
+    // background: linear-gradient(to bottom, darkturquoise
+    // 0%, #d1f2e7
+    // 100%) !important;
+    --offset-bottom : auto !important;
+    --overflow      : hidden;
+    overflow        : auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Cinzel+Decorative:wght@900&family=Courgette&family=Fira+Mono:wght@700&family=Marck+Script&family=Merienda&family=Playball&family=Rubik+Puddles&display=swap');
+*{
+    font-family: 'Fira Mono', monospace;
+                color:#fff;
+    font-size: 35px !important;
+}

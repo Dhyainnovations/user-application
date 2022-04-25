@@ -1,0 +1,263 @@
+.card {
+  border       : 1px solid #FFFFFF;
+  border-radius: 3px;
+  box-shadow   : 4px 4px 4px 4px #ccc;
+  margin-bottom: 20px;
+  margin-right : 4px;
+  cursor       : pointer;
+}
+
+#social-media-icon-div {
+  border       : 1px solid #FFFFFF;
+  border-radius: 8px;
+  box-shadow   : 4px 4px 4px 4px #ccc;
+}
+
+p {
+  padding: 0 !important;
+  margin : 0 !important;
+}
+
+
+
+.report-seller-btn {
+  border-radius: 5px !important;
+  text-align   : center !important;
+  background   :  var(--ion-color-primary);
+  color        :  var(--ion-color-light);
+  margin-left  : 10%;
+
+}
+
+#product_img {
+  border       : 1px solid #FFFFFF;
+  border-radius: 15%;
+  box-shadow   : 3px 3px 16px 4px #ccc;
+  width        : 85px;
+  height       : 75px;
+}
+
+#share {
+  color:  var(--ion-color-light) !important;
+}
+
+.dot {
+  height       : 30px;
+  width        : 30px;
+  margin-left  : 5%;
+  background   :  var(--ion-color-primary);
+  color        :  var(--ion-color-light);
+  border-radius: 50%;
+  display      : inline-block;
+  box-shadow   : 3px 3px 16px 4px #ccc;
+
+}
+
+.social-icon {
+  color:  var(--ion-color-secondary);
+}
+
+
+#heart {
+  margin-left  : -10px !important;
+  border-radius: 50% !important;
+  height       : 20px;
+  width        : 20px;
+}
+
+.green {
+  color: #404040 !important;
+}
+
+.red {
+  color        : red !important;
+  border-radius: 55%;
+  padding      : 2px;
+}
+
+.btn-default {
+  color           : white;
+  background-color: blue;
+
+}
+
+.btn-change {
+  color           : Red;
+  background-color: white;
+}
+
+ion-chip.active {
+  color     :  var(--ion-color-primary) !important;
+  background: linear-gradient(to right, #555c59 0%, #1d1f1e 100%);
+}
+
+ion-slides {
+
+  height          : 50px !important;
+  padding-left    : 15px;
+  padding-right   : 15px;
+  margin-bottom   : 15px;
+  background-color:  var(--ion-color-light) !important;
+
+}
+
+.featured-slide {
+  width         : 50% !important;
+  // box-shadow: 3px -2px 11px 3px#ccc;
+  border-radius : 10px;
+  display       : flex;
+  flex-direction: column;
+  align-items   : flex-start;
+
+  .info {
+    margin        : 50px !important;
+    margin-left   : 0 !important;
+    margin-right  : 0px !important;
+    font-size     : 17px !important;
+    color         : #6E7989;
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+  }
+}
+
+
+// ion-slides{
+//   height:150px !important;
+// }
+.div-slides {
+  bottom          : 0;
+  width           : 100%;
+  // height: 160px;
+  display         : block;
+  background-color: #e6e6e6;
+
+  img {
+    // width: 55px;
+    // height: 50px;
+    // object-fit: contain;
+    margin       : 10px;
+    margin-right : 2px !important;
+    border-radius: 75px;
+  }
+}
+
+.tam-title {
+  margin-top    : -0.5%;
+  font-size     : 80%;
+  font-weight   : bold;
+  color         : #6E7989;
+  // margin-left: -75px !important;
+}
+
+ion-slide {
+  margin-left  : -20px !important;
+  margin-right : 23px !important;
+  border-radius: 50%;
+}
+
+ion-badge {
+  z-index: 999 !important;
+}
+
+#slideItem.active {
+  color      : #121212;
+  font-weight: 700;
+}
+
+.tam-title.active {
+  color     : blue !important;
+  background: linear-gradient(to right, #555c59 0%, #1d1f1e 100%);
+}
+
+//Pop-Up-Card
+.pop-up-card {
+  box-shadow   : 2px 2px 3px rgba(128, 128, 128, 0.664);
+  position     : absolute;
+  top          : 35%;
+  z-index      : 1;
+  left         : 2%;
+  border-radius: 10px;
+  width        : 95%;
+}
+
+
+ion-label {
+  font-size: 10px !important;
+}
+
+ion-checkbox {
+  margin: 10px;
+}
+
+// .card{
+//   width:100% !important;
+//   height:100% !important;
+//   box-shadow: 2px 2px 2px 2px #fff;
+// }
+input {
+  border-radius: 3px;
+  width        : 90%;
+}
+
+
+.submit-btn {
+  border-radius: 5px !important;
+  text-align   : center !important;
+  background   :var(--ion-color-primary);
+  margin       : 5px;
+  color        : var(--ion-color-light);
+}
+
+ion-item {
+  --background: #fffff;
+  height      : 35px;
+  width       : 100%;
+  margin-left : 35%;
+  // border: 1px solid red !important;
+  --box-shadow: rgba(172, 22, 22, 0.04) 0px 3px 5px !important;
+}
+
+
+ion-content {
+  --background :  var(--ion-color-light) !important;
+  // background: linear-gradient(to bottom, #8cdbe2
+  // 0%, #d1f2e7
+  // 100%) !important;
+
+  --offset-bottom: auto !important;
+  --overflow     : hidden;
+  overflow       : auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.productDetailsCard{
+  font-size: 12px;
+}
+
+#popupCard {
+  width: 95%;
+  margin: auto !important;
+  position        : absolute;
+  background-color:  var(--ion-color-light);
+  border          : 1px solid #ebe6e6;
+  border-radius   : 5px;
+  box-shadow      : 2px 2px 2px 2px #ccc;
+  z-index         : 2;
+  top             : 25%;
+  left:2%;
+  padding         : 10px;
+ 
+}
+
+.show {
+  visibility: visible;
+}
+
+.hidden {
+  display:none
+
+}

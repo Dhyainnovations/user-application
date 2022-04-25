@@ -1,0 +1,78 @@
+<ion-content class="mt-2">
+  <div class="myproduct-div mt-5 ">
+    <div class="row">
+      <div class="col-7">
+        <ion-icon (click)="navigateHome()" style="margin:20px;cursor:pointer;color:#EB154B" name="close"></ion-icon>
+
+      </div>
+
+      <div class="col-5 ion-text-center">
+        <span class="seller"><b>24hrs</b></span>
+        <!-- <img id="logo" height="100px" width="120px" src="assets/logo.jpeg" alt=""> -->
+      </div>
+
+    </div>
+    <p class="get-started mt-2 mx-3"><b>Getting Started</b></p>
+
+
+
+
+
+    <div class="row ion-text-center">
+      <div class="col-4">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="#7E869E" fill-opacity="0.25"/>
+          <circle cx="12" cy="10" r="4" fill="white"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2209 18.2462C18.2791 18.3426 18.2613 18.466 18.1795 18.5432C16.5675 20.0662 14.3928 21 12 21C9.60731 21 7.43267 20.0663 5.8206 18.5433C5.7388 18.466 5.72104 18.3427 5.77921 18.2463C6.9434 16.318 9.29218 15 12.0001 15C14.708 15 17.0567 16.3179 18.2209 18.2462Z" fill="white"/>
+          </svg>
+      </div>
+      <div class="col-8">
+        <input type="text" id="edit-field" placeholder="Username" [(ngModel)]="userName" maxlength="10">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <svg style="margin-left: 25% !important;" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 36C27.9411 36 36 27.9411 36 18C36 8.05887 27.9411 0 18 0C8.05887 0 0 8.05887 0 18C0 27.9411 8.05887 36 18 36Z" fill="#007CFF"/>
+          <path d="M27 21.7215C25.0583 21.7215 23.2065 21.2985 21.4988 20.4638C21.231 20.3355 20.9205 20.3152 20.637 20.412C20.3535 20.511 20.1218 20.718 19.9913 20.9857L19.1812 22.662C16.7512 21.267 14.7352 19.2487 13.338 16.8187L15.0165 16.0087C15.2865 15.8782 15.4912 15.6465 15.5902 15.363C15.687 15.0795 15.669 14.769 15.5385 14.5013C14.7015 12.7958 14.2785 10.944 14.2785 9C14.2785 8.379 13.7745 7.875 13.1535 7.875H9C8.379 7.875 7.875 8.379 7.875 9C7.875 19.5457 16.4543 28.125 27 28.125C27.621 28.125 28.125 27.621 28.125 27V22.8465C28.125 22.2255 27.621 21.7215 27 21.7215Z" fill="white"/>
+          </svg>
+      </div>
+      <div class="col-8">
+        <input disabled type="text" id="edit-field" placeholder="Mobile number" [(ngModel)]="mobileNumber">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <img src="assets/gif/location.gif" alt="">
+      </div>
+      <div class="col-8">
+        <ion-item>
+          <svg style="margin: 5px;" (click)="locationChange()" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="#EB154B" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+          </svg>
+          <ion-label style="font-size:13px !important;color: #121212;">{{city}}</ion-label>
+          <ion-select (ionChange)="changeLocation()" style="font-size: 10px;" [(ngModel)]="city" interface="popover">
+            <ion-select-option *ngFor="let location of locationsList" [value]="location.city">{{location.city}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
+
+
+    <div class="row ">
+      <div class="col-7">
+        <button (click)="navigateHome()" type="button" class="btn btn-success btn-sm skip-btn">Skip</button>
+      </div>
+      <div class="col-5">
+        <button (click)="userDetailsUpload()" type="button" class="btn btn-success btn-sm update-btn">Next</button>
+      </div>
+    </div>
+  </div>
+
+
+
+</ion-content>
