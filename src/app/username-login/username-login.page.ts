@@ -129,6 +129,7 @@ export class UsernameLoginPage implements OnInit {
           })
           localStorage.setItem("token", response.token)
           localStorage.setItem("tbid", response.tbid)
+          
           localStorage.setItem("mobilenumber", response.mobile_number)
           const obj = {
             id: response.tbid,

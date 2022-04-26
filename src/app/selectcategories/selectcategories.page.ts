@@ -13,13 +13,13 @@ export class SelectcategoriesPage implements OnInit {
 
   constructor(private router: Router, private http: HttpService,
     private toastCtrl: ToastController, route: ActivatedRoute) {
-      route.params.subscribe(val => {
-        this.getCategory()
-        this.selectedCategories()
-        this.test()
-        console.log(this.alredySelectedCategoryList);
-      });
-     }
+    route.params.subscribe(val => {
+      this.getCategory()
+      this.selectedCategories()
+      this.test()
+      console.log(this.alredySelectedCategoryList);
+    });
+  }
 
 
   ngOnInit() {
@@ -28,41 +28,49 @@ export class SelectcategoriesPage implements OnInit {
 
   userdetails: any = JSON.parse(atob(localStorage.getItem("24hrs-user-data")));
 
-  getCategoryList:any = [];
-  selectedCategoryList:any = []
-  alredySelectedCategoryList:any =[]
+  getCategoryList: any = [];
+  selectedCategoryList: any = []
+  alredySelectedCategoryList: any = []
 
   buttonColor: string = '#000'; //Default Color
-  addEvent(){
+  addEvent() {
     this.buttonColor = '#345465'; //desired Color
-    
+
     /*
     YOUR FUNCTION CODE
     */
-    
-    }
+
+  }
 
 
   toggleClass(item) {
-    item.active = !item.active;
-    this.selectedCategoryList.push(item.tbid) ;
-    // console.log(item);
-    console.log(this.selectedCategoryList);
-    
+    if (item) {
+      item.active = !item.active;
+      console.log(item.active);
+      console.log(item.tbid);
+
+      if (item.active == true) {
+        console.log(item.tbid);
+        this.selectedCategoryList.push(item.tbid);
+      } else {
+        this.selectedCategoryList.pop(item.tbid);
+      }
+      console.log(this.selectedCategoryList);
+    }
   }
 
 
   verify() {
     const storeCategory = this.selectedCategoryList.toString();
     console.log(storeCategory);
-    
+
     const Data = {
-      tbid : this.userdetails.id,
+      tbid: this.userdetails.id,
       store_category: storeCategory
     }
     console.log(Data);
-    this.http.post('/update_store_category',Data).subscribe((response: any) => {
-     
+    this.http.post('/update_store_category', Data).subscribe((response: any) => {
+
     }, (error: any) => {
       console.log(error);
     });
@@ -79,33 +87,32 @@ export class SelectcategoriesPage implements OnInit {
     });
   }
 
-  selectedCategories(){
+  selectedCategories() {
     this.http.get('/store_category',).subscribe((response: any) => {
       console.log(response);
-      
+
       this.alredySelectedCategoryList = response.records
     }, (error: any) => {
       console.log(error);
     });
   }
 
-  filterCat=[]
+  filterCat = []
 
-  test(){
+  test() {
     console.log(this.getCategoryList.length);
     console.log(this.alredySelectedCategoryList.length);
-    
-    
-    for(var i=0; i= this.getCategoryList.length; i++){
+
+
+    for (var i = 0; i = this.getCategoryList.length; i++) {
       console.log("test");
-      if(this.getCategoryList.tbid == this.alredySelectedCategoryList.tbid){
+      if (this.getCategoryList.tbid == this.alredySelectedCategoryList.tbid) {
         this.filterCat.push(this.getCategoryList)
         console.log("hai");
-        
+
       }
       console.log(this.filterCat);
-      
+
     }
   }
 }
-

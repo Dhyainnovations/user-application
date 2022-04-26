@@ -13,9 +13,10 @@ export class ChangeCategoryPage implements OnInit {
 
   constructor(private router: Router, private http: HttpService,
     private toastCtrl: ToastController, route: ActivatedRoute) {
+      this.selectedCategories()
     route.params.subscribe(val => {
       this.getCategory()
-      this.selectedCategories()
+     
       console.log(this.alredySelectedCategoryList);
       this.CategoryCheck();
     });
@@ -23,6 +24,7 @@ export class ChangeCategoryPage implements OnInit {
 
 
   ngOnInit() {
+    
   }
 
   userdetails: any = JSON.parse(atob(localStorage.getItem("24hrs-user-data")));

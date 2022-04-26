@@ -8,7 +8,7 @@ import {
   style,
   animate,
   transition
-} from '@angular/animations'; 
+} from '@angular/animations';
 import Swal from 'sweetalert2';
 
 
@@ -27,13 +27,13 @@ import Swal from 'sweetalert2';
     trigger('slidelefttitle', [
       transition('void => *', [
         style({ opacity: 0, transform: 'translateX(150%)' }),
-        animate('500ms 200ms ease-out', style({ transform: 'translateX(0%)', opacity: 1 }, ))
+        animate('500ms 200ms ease-out', style({ transform: 'translateX(0%)', opacity: 1 },))
       ])
     ]),
     trigger('slideup', [
       transition('void => *', [
         style({ opacity: 0, transform: 'translateY(150%)' }),
-        animate('500ms 200ms ease-out', style({ transform: 'translateY(0%)', opacity: 1 }, ))
+        animate('500ms 200ms ease-out', style({ transform: 'translateY(0%)', opacity: 1 },))
       ])
     ])
   ]
@@ -45,7 +45,7 @@ export class SupportPage implements OnInit {
   }
 
   ngOnInit() {
-
+    this.SellerDetailDescription();
   }
   userdetails: any = JSON.parse(atob(localStorage.getItem("24hrs-user-data")));
 
@@ -80,6 +80,7 @@ export class SupportPage implements OnInit {
     this.http.post('/user_description', Data).subscribe((response: any) => {
       if (response.success == "true") {
         this.problemDescription = '';
+        this.SellerDetailDescription()
         const Toast = Swal.mixin({
           toast: true,
           position: 'top-end',
@@ -122,13 +123,30 @@ export class SupportPage implements OnInit {
 
   }
 
-  navigateToFaq(){
+  navigateToFaq() {
     this.router.navigate(['/faq'])
   }
 
-  
+  description: any;
+  time: any;
+  SellerDetailDescription() {
+
+    this.http.get('/user_details').subscribe((response: any) => {
+      if (response.success == "true") {
+        console.log(response);
+        if (response.records.description == null) {
+          this.description = "Not Available";
+          this.time = "";
+        } else {
+          this.description = response.records.description;
+          this.time = response.records.created_at;
+        }
+      } else {
+      }
+    }, (error: any) => {
+      console.log(error);
+    }
+    );
+  }
+
 }
-
-
-
-

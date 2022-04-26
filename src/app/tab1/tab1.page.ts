@@ -118,7 +118,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   UserDetails() {
 
     this.http.get('/user_details',).subscribe((response: any) => {
-
+      localStorage.setItem("location", response.records.location);
       this.loginUserTbid = response.records.user_name;
       if (response.records.user_name == null) {
         this.loginUserName = "User";

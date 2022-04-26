@@ -1,13 +1,13 @@
 <!------------ Header  ---------------->
-<ion-toolbar color="light" >
+<ion-toolbar color="light">
   <ion-buttons slot="start">
-      <ion-menu-button style="margin-top:15px;color:#121212" autoHide="false">
-        <svg  width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 7H19" stroke="#121212" stroke-width="2" stroke-linecap="round"/>
-          <path d="M5 12H15" stroke="#121212" stroke-width="2" stroke-linecap="round"/>
-          <path d="M5 17H11" stroke="#121212" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-      </ion-menu-button>
+    <ion-menu-button style="margin-top:15px;color:#121212" autoHide="false">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 7H19" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+        <path d="M5 12H15" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+        <path d="M5 17H11" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </ion-menu-button>
   </ion-buttons>
 
   <div class="row">
@@ -15,12 +15,17 @@
       <h5 style="color:#121212;margin-top:10px"><b></b></h5>
     </div>
     <div class="col-8 mt-2 mx-2" style="text-align: right;width: 90%;">
-        <svg (click)="notification()" style="margin:3px;" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z" fill="black"/>
-          <path d="M9 17C9 17.394 9.0776 17.7841 9.22836 18.1481C9.37913 18.512 9.6001 18.8427 9.87868 19.1213C10.1573 19.3999 10.488 19.6209 10.8519 19.7716C11.2159 19.9224 11.606 20 12 20C12.394 20 12.7841 19.9224 13.1481 19.7716C13.512 19.6209 13.8427 19.3999 14.1213 19.1213C14.3999 18.8427 14.6209 18.512 14.7716 18.1481C14.9224 17.7841 15 17.394 15 17L12 17H9Z" fill="black"/>
-          <circle cx="18" cy="6" r="2.5" fill="#eb154b" stroke="#eb154b"/>
-          </svg>
-          
+      <svg (click)="notification()" style="margin:3px;" width="26" height="26" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z"
+          fill="black" />
+        <path
+          d="M9 17C9 17.394 9.0776 17.7841 9.22836 18.1481C9.37913 18.512 9.6001 18.8427 9.87868 19.1213C10.1573 19.3999 10.488 19.6209 10.8519 19.7716C11.2159 19.9224 11.606 20 12 20C12.394 20 12.7841 19.9224 13.1481 19.7716C13.512 19.6209 13.8427 19.3999 14.1213 19.1213C14.3999 18.8427 14.6209 18.512 14.7716 18.1481C14.9224 17.7841 15 17.394 15 17L12 17H9Z"
+          fill="black" />
+        <circle cx="18" cy="6" r="2.5" fill="#eb154b" stroke="#eb154b" />
+      </svg>
+
       <!-- <ion-badge style="border-radius: 50%;margin-left: -14px ;color:#eb154b ;font-size: 12px;" color="light">10</ion-badge> -->
 
     </div>
@@ -30,47 +35,56 @@
 <ion-content class="bg-class" [fullscreen]="true">
   <div class="container">
     <div style="margin-top: 5% !important" class="signin-div  ">
-      <div  class="row">
+      <div class="row">
         <div class="col-6 ">
-          <h4 class="title" style="margin:10px;"><b>Support</b></h4>
+          <h4 style="margin:10px; color:#5C5C5C"><b>Support</b></h4>
         </div>
         <div (click)="navigateToFaq()" class="col-6">
-          <h5 class="primaryTitle" style="margin:10px; text-align: right;"><b>FAQ</b></h5>
+          <h5 style="margin:10px; color:#EB154B;text-align: right;"><b>FAQ</b></h5>
         </div>
 
       </div>
 
       <div class="col-12 ion-text-center">
-        <img height="120px" width="120px" src="assets/icon/s.png" alt="">    
+        <img height="120px" width="120px" src="assets/icon/s.png" alt="">
       </div>
 
-      <div  class="row mt-2">
-        <div class="col-6" >
-          <p class="name" style="margin:0 12px;font-size: smaller;">Email us at           :</p>
+      <div class="row mt-2">
+        <div class="col-6">
+          <p class="name" style="margin:0 12px;font-size: smaller;">Email us at :</p>
         </div>
         <div class="col-6">
-          <p style="font-size: 12px;color:#5C5C5C;margin-left: -40px;">support@24hours.com</p></div>
-  
-          <div class="col-6">
-            <p  class="name" style="margin:0 12px;font-size: smaller;">Call us at              :</p>
-          </div>
-          <div class="col-6">
+          <p style="font-size: 12px;color:#5C5C5C;margin-left: -40px;">support@24hours.com</p>
+        </div>
+
+        <div class="col-6">
+          <p class="name" style="margin:0 12px;font-size: smaller;">Call us at :</p>
+        </div>
+        <div class="col-6">
           <p style="font-size: 12px; color:#5C5C5C;margin-left: -40px;">+91 9876543210</p>
         </div>
       </div>
       <hr style="width: 75%;margin-left:10%;color:rgb(12, 12, 12)">
-      <p  style="color: crimson; font-size: smaller;padding:0 20px;"><b>Usually we respond in 60 minutes. </b></p>
+      <p style="color: crimson; font-size: smaller;padding:0 20px;"><b>Usually we respond in 60 minutes. </b></p>
 
-        <div class="form-group" >
-          <label  style="margin-left: 5px;" for="exampleFormControlTextarea1">Problem Description  :</label>
-          <textarea [(ngModel)]="problemDescription" style="background-color: transparent;border: 1px solid rgb(158, 150, 150);" class="form-control" id="exampleFormControlTextarea1" maxlength="100" rows="3"></textarea>
-        </div>
+      <div class="form-group">
+        <label style="margin-left: 5px;" for="exampleFormControlTextarea1">Problem Description :</label>
+        <textarea [(ngModel)]="problemDescription"
+          style="background-color: transparent;border: 1px solid rgb(158, 150, 150);" class="form-control"
+          id="exampleFormControlTextarea1" maxlength="100" rows="3"></textarea>
+         <div class="pt-2">
+          <p  style="font-size: 12px;">Description : {{description}}  <span>/ {{time}}</span></p>
+          
 
-        <div  style="width:100%; text-align: center;">
-          <button  type="button" [disabled]="!problemDescription"[disabled]="!problemDescription" (click)="submit()" class="btn btn-primary  submit-btn mt-2"><b>Submit</b></button>
          </div>
+      </div>
+      
+      <div style="width:100%; text-align: center;">
+        <button type="button" [disabled]="!problemDescription" [disabled]="!problemDescription" (click)="submit()"
+          class="btn btn-primary  submit-btn mt-2"><b>Submit</b></button>
+      </div>
     </div>
-    </div>
-   
+  </div>
+
 
 </ion-content>

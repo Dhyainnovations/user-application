@@ -53,6 +53,8 @@ export class Tab3Page {
       this.getSelectCategory()
       this.locationList()
       this.UserDetails()
+
+     
     });
   }
 

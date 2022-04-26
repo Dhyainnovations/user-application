@@ -241,7 +241,6 @@ export class SigninPage implements OnInit {
 
           const encodeText: any = btoa(JSON.stringify(obj))
           localStorage.setItem("24hrs-user-data", encodeText)
-
           localStorage.setItem("loginstatus", response.user_status)
 
           const Toast = Swal.mixin({
