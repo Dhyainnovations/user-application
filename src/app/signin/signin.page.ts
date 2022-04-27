@@ -63,6 +63,7 @@ export class SigninPage implements OnInit {
     //   GoogleAuth.initialize();
     // });
 
+
   }
 
   // async googleSignup() {
@@ -94,7 +95,7 @@ export class SigninPage implements OnInit {
 
   loginsts: any = ((localStorage.getItem("loginstatus")));
   registersts: any;
-
+  otpseconds: any = 60;
   mobileNumber: any = '';
   otp: any = '';
   MobInputcolSize: any;
@@ -103,23 +104,25 @@ export class SigninPage implements OnInit {
   submitBtnVisible: any = false;
   resendOtpVisible: any = false;
   timerVisible: any = false
+  resendOTPIfClicked: any = false;
 
+
+
+  //OTP-Countdown-Timer
   clearTimer() { clearInterval(this.intervalId); }
   start() { this.countDown(); }
   stop() {
     this.clearTimer();
-    this.message = `$ ${this.hour} {this.seconds} `;
   }
 
   private countDown() {
     this.clearTimer();
     this.intervalId = window.setInterval(() => {
-      this.seconds -= 1;
-      if (this.seconds === 0) {
-        // this.message = 'Offers Ends..!';
-      } else {
-        if (this.seconds < 0) { this.seconds = 60; } // reset
-        this.message = `${this.hour}. ${this.seconds}s`;
+      this.otpseconds -= 1;
+      if (this.otpseconds === 0) {
+        this.resendOtpVisible = true;
+        this.clearTimer();
+        this.otpseconds = 0;
       }
     }, 1000);
   }
@@ -147,10 +150,12 @@ export class SigninPage implements OnInit {
   }
 
   sendOtp() {
+    this.resendOTPIfClicked = true;
+    this.countDown();
     this.seconds = 60;
     this.MobInputcolSize = 12;
     this.sendOtpBtnVisible = false;
-    this.resendOtpVisible = true;
+
 
     const Data = {
       mobile_number: this.mobileNumber,
@@ -254,7 +259,7 @@ export class SigninPage implements OnInit {
               toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
           })
-  
+
           Toast.fire({
             icon: 'success',
             title: 'Login successfully'
@@ -309,7 +314,7 @@ export class SigninPage implements OnInit {
   navigateToLocal() {
     this.router.navigate(['/home'])
   }
-  signup(){
+  signup() {
     this.router.navigate(['/register'])
     this.dismiss();
   }

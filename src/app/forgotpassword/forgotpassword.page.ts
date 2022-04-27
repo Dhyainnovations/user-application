@@ -190,12 +190,10 @@ export class ForgotpasswordPage implements OnInit {
 
   }
 
-
+  IfSendOTPClicked: any = false;
   SendOTP() {
-    setTimeout(() => {
-      this.enableResendOTP();
-    }, 60000)
-
+    this.start();
+    this.IfSendOTPClicked = true;
 
     const obj = {
       mobile_number: this.PhoneNumber
@@ -250,5 +248,24 @@ export class ForgotpasswordPage implements OnInit {
     this.AfterSixtySeconds = true;
   }
 
+  resendOtpVisible: any = false;
+  intervalId = 0;
+  otpseconds: any = "60";
+  clearTimer() { clearInterval(this.intervalId); }
+  start() { this.countDown(); }
+  stop() {
+    this.clearTimer();
+  }
 
+  private countDown() {
+    this.clearTimer();
+    this.intervalId = window.setInterval(() => {
+      this.otpseconds -= 1;
+      if (this.otpseconds === 0) {
+        this.resendOtpVisible = true;
+        this.clearTimer();
+        this.otpseconds = 0;
+      }
+    }, 1000);
+  }
 }

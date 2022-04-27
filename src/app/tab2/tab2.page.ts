@@ -109,7 +109,7 @@ export class Tab2Page {
     this.resultStoreCardVisible = false
     this.selectStore = ""
     this.isVisible = false;
-
+    
   }
 
   forStore() {
@@ -117,26 +117,29 @@ export class Tab2Page {
     this.forproduct = false;
     this.forStorebtnVisible = true
     this.forProductbtnVisible = false
-
+    this.selectStore = "";
     this.resultProductCardVisible = false;
     this.productNameList = [];
     this.isVisible = false;
-    this.selectProductName = ""
+    this.selectProductName = "";
+    
   }
 
+  forproductlist: any = false;
 
 
 
-
-  selectStoreForProductSetAlarm() {
+  selectStoreForProductSetAlarm(tbid, name) {
+    this.selectStore = name;
     this.selectProductName = "";
     this.resultProductCardVisible = false;
     this.productNameList = []
     this.isVisible = true;
-    this.storeIdUseOfProductSetAlarm = name
+    this.forproductlist = false;
+
 
     const obj = {
-      store_id: this.storeTbid
+      store_id: tbid
     }
     this.http.post('/product_list_user', obj).subscribe((response: any) => {
       console.log(response);
@@ -210,6 +213,7 @@ export class Tab2Page {
   category_tbid: any;
   store_category_tbid: any;
   selectProductToSetAlarm(name) {
+    this.IfproductNamePresent = false;
     this.selectProductName = name;
     console.log(name);
     const s = name
@@ -255,6 +259,11 @@ export class Tab2Page {
   }
 
 
+  searchStores(){
+    this.isVisible = true;
+    this.resultStoreCardVisible = false
+    this.forproductlist = true;
+  }
 
   searchStore() {
     this.isVisible = true;

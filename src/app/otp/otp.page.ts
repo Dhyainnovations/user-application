@@ -21,6 +21,7 @@ export class OtpPage implements OnInit {
   ngOnInit() {
     this.mobileNumber = localStorage.getItem("24hrs-user-mobile-number-otp-verification");
     this.SendOTP();
+    this.start();
   }
 
 
@@ -39,9 +40,7 @@ export class OtpPage implements OnInit {
     }
     this.http.post('/user_get_otp', obj).subscribe((response: any) => {
       console.log(response);
-      setTimeout(() => {
-        this.enableResendOTP();
-      }, 60000)
+      
     }, (error: any) => {
       console.log(error);
     }
@@ -69,5 +68,26 @@ export class OtpPage implements OnInit {
     this.ResendOTPEnable = true;
   }
 
+
+  resendOtpVisible: any = false;
+  intervalId = 0;
+  otpseconds: any = "60";
+  clearTimer() { clearInterval(this.intervalId); }
+  start() { this.countDown(); }
+  stop() {
+    this.clearTimer();
+  }
+
+  private countDown() {
+    this.clearTimer();
+    this.intervalId = window.setInterval(() => {
+      this.otpseconds -= 1;
+      if (this.otpseconds === 0) {
+        this.resendOtpVisible = true;
+        this.clearTimer();
+        this.otpseconds = 0;
+      }
+    }, 1000);
+  }
 
 }

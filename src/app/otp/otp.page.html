@@ -28,8 +28,8 @@
 
   <div class="ion-margin-top">
     <ion-button  expand="block" color="dark" (click)="verifyOTP()">Verify OTP</ion-button>
-    <p class="small mt-2">Resend OTP Will Be Enabled In 60 Seconds</p>
-    <ion-button  expand="block" color="dark" (click)="SendOTP()" *ngIf="ResendOTPEnable">Resend OTP</ion-button>
+    <p class="resendotp p-2 small" >Resend OTP Will Be Available in {{otpseconds}} Seconds</p>
+    <ion-button  expand="block" color="dark" (click)="SendOTP()" *ngIf="resendOtpVisible">Resend OTP</ion-button>
   </div>
 
 
