@@ -3,25 +3,8 @@
   <ion-split-pane contentId="main-content">
     <ion-menu swipeGesture="false"  contentId="main-content" type="overlay">
       <ion-content>
-        <ion-list id="inbox-list">
+        <ion-list style="margin-top: 25%;" id="inbox-list">
         
-          <div class="row">
-            <div class="col-12 mt-3">
-              <ion-menu-toggle auto-hide="false">
-                <svg style="margin-left: 7%;" width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="9" fill="#CFCFCF" fill-opacity="0.65"/>
-                  <path d="M16 8L8 16" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 8L16 16" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-            </ion-menu-toggle>
-
-            </div>
-            <div class="col-12  mb-2 ">
-              <span   class="dot ion-text-center">
-                <img  height="100px" style="margin: 5px;" width="105" src="assets/logo.jpeg" alt="">
-              </span>  
-            </div>
-          </div>
           <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item  routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <img  class="mb-3" style="height:45px;width:43px;color:#fff;margin:5px" [src]="p.icon" alt="">

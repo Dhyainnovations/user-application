@@ -1,7 +1,7 @@
 <!------------ Header  ---------------->
 <ion-toolbar color="light">
   <ion-buttons slot="start">
-    <ion-menu-button style="margin-top:15px;color:#121212" autoHide="false">
+    <ion-menu-button class="mt-3" style="color:#121212" autoHide="false">
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
         <path d="M5 7H19" stroke="#121212" stroke-width="2" stroke-linecap="round" />
         <path d="M5 12H15" stroke="#121212" stroke-width="2" stroke-linecap="round" />
@@ -13,8 +13,8 @@
   <div class="row">
     <div class="col-4">
     </div>
-    <div class="col-8 mt-2 mx-2" style="text-align: right;width: 90%;">
-      <svg (click)="notification()" style="margin:3px;" width="26" height="26" viewBox="0 0 24 24" fill="none">
+    <div class="col-8 mt-3 mx-3" style="text-align: right;width: 90%;">
+      <svg (click)="notification()" style="margin:3px;" width="26" height="50" viewBox="0 0 24 24" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z"
           fill="black" />
@@ -23,8 +23,6 @@
           fill="black" />
         <circle cx="18" cy="6" r="2.5" fill="#eb154b" stroke="#eb154b" />
       </svg>
-
-      <!-- <ion-badge style="border-radius: 50%;margin-left: -14px ;color:#eb154b ;font-size: 12px;" color="light">10</ion-badge> -->
 
     </div>
   </div>
@@ -39,12 +37,12 @@
   <div style="margin-top: -5%;" class="row">
     <div class="col-12">
 
-      <div class="row">
+      <div class="row mx-2">
         <div class="col-9">
-          <h2 class="mx-3"><b>Hi {{loginUserName}}</b></h2>
+          <h2 ><b>Hi {{loginUserName}}</b></h2>
         </div>
         <div style="margin-top: 5%;" class="col-3 ">
-          <svg (click)="searchPage()" style="margin-left: 5%;margin-top:10% !important;margin-right:25%" width="25"
+          <svg (click)="searchPage()" style="margin-left: 26%;margin-top:7% !important;" width="25"
             height="25" viewBox="0 0 24 24" fill="none">
             <circle cx="11" cy="11" r="7" stroke="#121212" stroke-width="2" />
             <path
@@ -52,17 +50,15 @@
               stroke="#CCD2E3" stroke-width="2" stroke-linecap="round" />
             <path d="M20 20L17 17" stroke="#121212" stroke-width="2" stroke-linecap="round" />
           </svg>
-
-
         </div>
-        <p style="margin-left:8% !important;">Welcome to 24hrs</p>
+        <p style="margin-left: 4% !important;" >Welcome to 24hrs</p>
       </div>
 
 
     </div>
   </div>
   <!------------ Ion slides  ---------------->
-  <div class="div-slides ion-text-left">
+  <div style="margin-left: -2%;" class="div-slides ">
     <ion-slides slidesPerView="3" spaceBetween="1" [options]="slideOpts">
       <ion-slide text-start>
         <p [style.border-bottom]="slideName == 'Home' ? '2px solid red' : '#23d5ab' "
@@ -82,62 +78,60 @@
 
 
   <div style="margin-top: -7%;" class="row">
-    <div class="col-4 mt-2">
+    <div class="col-5 mt-1">
       <h6 style="color: #272A3F;margin-left:15%;"> Live Offers</h6>
     </div>
 
     <!-----------   Location Dropdown    ---------------->
-    <div class="col-8 mt-2">
-      <ion-item>
-        <svg (click)="locationChange()" width="16" height="16" fill="#eb154b" class="bi bi-geo-alt-fill"
-          viewBox="0 0 16 16">
-          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-        </svg>
-        <ion-label style="font-size:13px !important;color: #121212;">{{city}}</ion-label>
-        <ion-select (ionChange)="locationBased()" style="font-size: 10px;color:#F4F7FA" [(ngModel)]="city"
-          interface="popover">
-          <ion-select-option *ngFor="let location of locationsList" [value]="location.city">{{location.city}}
-          </ion-select-option>
-          <ion-select-option [value]="All">All</ion-select-option>
-        </ion-select>
-      </ion-item>
+    <div class="col-7 mt-2 ">
+
+      <div class="select">
+        <svg style="margin-top: 6%;" width="16" height="20" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.0125 21.45C4.8375 18.6914 0 12.0055 0 8.25C0 3.69359 3.58167 0 8 0C12.4167 0 16 3.69359 16 8.25C16 12.0055 11.125 18.6914 8.9875 21.45C8.475 22.1074 7.525 22.1074 7.0125 21.45ZM8 11C9.47083 11 10.6667 9.7668 10.6667 8.25C10.6667 6.7332 9.47083 5.5 8 5.5C6.52917 5.5 5.33333 6.7332 5.33333 8.25C5.33333 9.7668 6.52917 11 8 11Z" fill="#EB154B"/>
+          </svg>
+          
+        <select style="margin: 10px !important;" ngModel placeholder="category" name="category">
+          <option *ngFor="let location of locationsList" value="{{location.city}}">
+            {{location.city}}</option>
+          <option value="All">All</option>
+        </select>
+      </div>
     </div>
   </div>
 
 
   <!------------Store Details Card  -------------->
 
-  <div class="container">
-    <div class="row ion-text-center">
+  <div class="container p-2">
+    <div class="row ion-text-center p-2">
       <!--------------- Live offer card ------------------>
       <div class="container">
-        <div *ngIf="offerListVisible" class="row mb-2">
+        <div *ngIf="offerListVisible" class="row ">
           <div *ngFor="let offer of offerlist" id="productCard" class="col-6 ion-text-center">
             <div class="row mt-2">
               <div class="col-12 ion-text-left">
-                <span style="font-size: 14px;color:#404040;"><b>{{offer.store_name | titlecase}} </b></span>
+                <span style="font-size: 14px;color:#0d0d0d;"><b>{{offer.store_name | titlecase}} </b></span>
               </div>
-              <div (click)="singleCard(offer.product)" class="col-9 ion-text-left mt-2">
+              <div (click)="singleCard(offer.product)" class="col-12 ion-text-left mt-2">
                 <img id="product_img" src="{{offer.product_image}}" alt="">
               </div>
-              <div class="col-3 mt-2">
-                <div>
-                  <ion-badge style="margin-left: -15px;" >{{offer.product_weight}}&nbsp;{{offer.product_unit}}
-                  </ion-badge>
-                </div>
-              </div>
+            
               <div (click)="singleCard(offer.product)" class="col-12 ion-text-left mt-1">
-                <p style="padding: 0; margin:0;color: #121212;font-size: 12px;"><b>{{offer.product}}</b></p>
+                <p style="padding: 0; margin:0;color: #0d0d0d;font-size: 12px;"><b>{{offer.product}} <span style="color:#eb154b">({{offer.product_weight}} {{offer.product_unit}})</span> </b></p>
+                
               </div>
               <div (click)="singleCard(offer.product)" class="col-12 ion-text-left ">
                 <p [ngClass]='offer.offer != "" ? "show" : "hidden"'><span
-                    style="font-size:10px;color: #404040;text-decoration: line-through">
-                    <i style="color:rgb(235, 21, 75)" class="fa fa-inr" aria-hidden="true"></i>
-                    Rs.{{offer.total_cost}}.00</span> <span style="margin: 3px;padding:0;font-size:13px;">
-                    <b>{{offer.offer_price}}.00</b></span></p>
+                    style="font-size:10px;color: #0d0d0d;text-decoration: line-through">
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.83257e-05 1.625C4.83257e-05 1.17635 0.358243 0.8125 0.799993 0.8125H7.19999C7.64249 0.8125 7.99999 1.17635 7.99999 1.625C7.99999 2.07365 7.64249 2.4375 7.19999 2.4375H5.79499C6.03499 2.80313 6.21249 3.21445 6.30999 3.65625H7.19999C7.64249 3.65625 7.99999 4.01934 7.99999 4.46875C7.99999 4.91816 7.64249 5.28125 7.19999 5.28125H6.30999C5.97999 6.76152 4.76249 7.90156 3.25749 8.09707L6.86499 10.692C7.20249 10.9738 7.30749 11.4816 7.04999 11.8473C6.79499 12.19 6.29499 12.2967 5.93499 12.0352L0.334993 7.97266C0.0520683 7.74668 -0.0679067 7.40137 0.0382183 7.06367C0.144343 6.70566 0.452243 6.5 0.799993 6.5H2.79999C3.61999 6.5 4.32499 5.99981 4.63249 5.28125H0.799993C0.358243 5.28125 4.83257e-05 4.91816 4.83257e-05 4.46875C4.83257e-05 4.01934 0.358243 3.65625 0.799993 3.65625H4.63249C4.32499 2.9377 3.61999 2.4375 2.79999 2.4375H0.799993C0.358243 2.4375 4.83257e-05 2.07365 4.83257e-05 1.625Z" fill="#EB154B"/>
+                      </svg>
+                      
+                    {{offer.total_cost}}</span> <span style="margin: 3px;padding:0;font-size:13px;">
+                    <b>{{offer.offer_price}} /-</b></span></p>
 
-                <p> <span style="font-size:10px;color: #404040;" [ngClass]='offer.offer == "" ? "show" : "hidden"'>
-                    Rs.{{offer.total_cost}}.00</span></p>
+                <p> <span style="font-size:10px;color: #0d0d0d;" [ngClass]='offer.offer == "" ? "show" : "hidden"'>
+                    {{offer.total_cost}}</span></p>
               </div>
               <div (click)="singleCard(offer.product)" class="col-12 ion-text-left ">
                 <svg style="margin-left: -3px;" width="20" height="18" viewBox="0 0 29 29" fill="none">
@@ -157,14 +151,19 @@
                     d="M28.6263 21.186C27.9188 19.9146 26.35 19.4304 25.0626 20.0861L20.8775 22.0883C20.2997 21.0003 19.1912 20.3077 17.9714 20.2728L14.108 20.165C13.4962 20.1473 12.896 19.9902 12.352 19.706L11.9589 19.4997C9.94606 18.4372 7.54686 18.4399 5.53609 19.5065L5.56061 18.6047C5.5687 18.306 5.33626 18.0571 5.04122 18.0489L0.804722 17.9309C0.50968 17.9227 0.264203 18.158 0.256116 18.4568L0.000204782 27.8708C-0.00788216 28.1696 0.224551 28.4184 0.519593 28.4266L4.75609 28.5447H4.77096C5.06026 28.5444 5.29687 28.3111 5.30496 28.0185L5.31696 27.5681L6.41756 26.9714C6.84956 26.736 7.35486 26.68 7.82677 26.8153L14.3988 28.6831C14.4103 28.6865 14.4218 28.6891 14.4335 28.6918C14.9086 28.7924 15.3927 28.8429 15.8782 28.8426C16.906 28.8431 17.9218 28.6189 18.856 28.1846C18.879 28.174 18.9011 28.1619 18.9223 28.1482L28.4513 21.9066C28.6889 21.7513 28.7656 21.4351 28.6263 21.186ZM1.08307 27.3597L1.3095 19.0276L4.47801 19.1158L4.25131 27.4482L1.08307 27.3597ZM18.3744 27.2178C17.2138 27.7482 15.9176 27.8946 14.6701 27.6362L8.11555 25.7737C7.37808 25.5624 6.58817 25.6501 5.9133 26.0175L5.35087 26.3224L5.50165 20.7824C7.28364 19.5821 9.56937 19.4587 11.4674 20.4601L11.8606 20.6664C12.5477 21.0256 13.3058 21.224 14.0787 21.2465L17.9422 21.3542C19.0274 21.3857 19.949 22.1681 20.1692 23.2448L14.4145 23.0844C14.1194 23.0762 13.874 23.3116 13.8659 23.6103C13.8578 23.9091 14.0902 24.1579 14.3853 24.1661L20.7361 24.3431H20.7512C21.0403 24.3428 21.2769 24.1096 21.285 23.8169C21.2915 23.5818 21.274 23.3465 21.2333 23.1151L25.5251 21.0613L25.5376 21.0552C26.1465 20.743 26.8829 20.8473 27.3835 21.3167L18.3744 27.2178Z"
                     fill="#EB154B" />
                 </svg>
-                <span style="font-size:10px;color: #404040;" [ngClass]='offer.offer != "" ? "show" : "hidden"'>
+                <span style="font-size:13px;color: #0d0d0d;" [ngClass]='offer.offer != "" ? "show" : "hidden"'>
                   {{offer.offer}}%</span>
-                <span style="font-size:10px;color: #404040;" [ngClass]='offer.offer == "" ? "show" : "hidden"'>
+                <span style="font-size:10px;color: #0d0d0d;" [ngClass]='offer.offer == "" ? "show" : "hidden"'>
                   {{offer.other_offer}}</span>
               </div>
               <div (click)="singleCard(offer.product)" class="col-12 ion-text-left ">
                 <p style="padding: 0; margin:0;color: #272A3F;font-size: 12px;">
-                  <i style="color:rgb(235, 21, 75);" class="fa fa-clock-o" aria-hidden="true"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="#EB154B" class="bi bi-clock-history" viewBox="0 0 16 16">
+                    <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+                    <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+                    <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+                  </svg>
+                    
                   {{offer.offer_time}}
                 </p>
               </div>
@@ -180,8 +179,11 @@
     <img src="assets/gif/empty.gif" alt="">
   </div>
 
-  <div style="margin-top: -5%;" class="row">
-    <div class="col-12 mt-2">
+  
+  <div  class="row">
+    <div class="col-12 ">
+      <hr style="width: 90%;margin: auto;">
+
       <h6 style="color: #272A3F;margin-left:5%;"> Expired Offers</h6>
     </div>
 
@@ -189,7 +191,6 @@
   </div>
 
 
-  <!-- <button (click)="testSlide()">click</button> -->
 
   <!------------- Expiry No data found Gif ------------------->
   <div *ngIf="ExpirynoDataFound">
@@ -197,7 +198,6 @@
   </div>
 
 
-  <!-- <button (click)="testSlide()">Slide</button> -->
 </ion-content>
 
 <!----- Single product details card Pop-Up ----->
@@ -242,13 +242,13 @@
       <div class="row">
 
         <div class="col-8  mb-3 mt-1">
-          <p (click)="storeDetails(storeName)" style="font-size: 18px;color: #404040;margin-left: 8px !important;">
+          <p (click)="storeDetails(storeName)" style="font-size: 18px;color: #404040;margin-left: 5% !important;">
             <b>{{storeName}}</b>
 
           </p>
         </div>
         <div class="col-4">
-          <svg (click)="navigateHome()"  style="margin:10px;cursor:pointer;color:#eb154b;margin-left: 125% !important;" width="24" height="27"
+          <svg (click)="navigateHome()"  style="margin:5px;cursor:pointer;color:#eb154b;margin-left: 125% !important;" width="24" height="27"
           viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d_1056_2574)">
             <path d="M18 6L6 18" stroke="#EB154B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -284,44 +284,17 @@
       <div class="col-4">
         <img id="product_img" height="75px" width="95px" style="margin-left:5px;border-radius: 5px;"
           src="{{productImage}}" alt="">
-        <div class="row">
-          <div class="col-12 ion-text-center mt-3">
-            <p style="color: #404040;">{{productName}}</p>
-          </div>
-        </div>
+      
       </div>
 
       <div class="col-8">
-        <div class="row">
-          <div class="col-6">
-            <div>
-              <ion-badge class="badge"  slot="start">{{offer}}&nbsp;{{unit}}
-              </ion-badge>
-            </div>
-
-          </div>
-
-          <div class="col-6">
-            <div *ngIf="ProductDelivery">
-
-              <!---------  Delivery icon ---------->
   
-              <svg width="20" height="20" viewBox="0 0 38 30" fill="none">
-                <path
-                  d="M6.65 0C5.07597 0 3.8 1.25918 3.8 2.8125V5.625H0.95C0.425303 5.625 0 6.04687 0 6.5625C0 7.07813 0.425303 7.5 0.95 7.5H16.15C16.6725 7.5 17.1 7.92187 17.1 8.4375C17.1 8.95313 16.6725 9.375 16.15 9.375H2.85C2.32512 9.375 1.9 9.79687 1.9 10.3125C1.9 10.8281 2.32512 11.25 2.85 11.25H14.25C14.7725 11.25 15.2 11.6719 15.2 12.1875C15.2 12.7031 14.7725 13.125 14.25 13.125H0.95C0.425303 13.125 0 13.5469 0 14.0625C0 14.5781 0.425303 15 0.95 15H12.35C12.8725 15 13.3 15.4219 13.3 15.9375C13.3 16.4531 12.8725 16.875 12.35 16.875H3.8V24.375C3.8 27.4805 6.29969 30 9.5 30C12.6469 30 15.2 27.4805 15.2 24.375H22.8C22.8 27.4805 25.2997 30 28.5 30C31.6469 30 34.2 27.4805 34.2 24.375H36.1C37.1509 24.375 38 23.5371 38 22.5C38 21.4629 37.1509 20.625 36.1 20.625V13.9043C36.1 12.9082 35.7022 11.9531 34.9897 11.25L30.4 6.7207C29.6341 6.01758 28.7197 5.625 27.7103 5.625H24.7V2.8125C24.7 1.25918 23.4234 0 21.85 0H6.65ZM32.3 13.9043V15H24.7V9.375H27.7103L32.3 13.9043ZM9.5 27.1875C7.92656 27.1875 6.65 25.9277 6.65 24.375C6.65 22.8223 7.92656 21.5625 9.5 21.5625C11.0734 21.5625 12.35 22.8223 12.35 24.375C12.35 25.9277 11.0734 27.1875 9.5 27.1875ZM31.35 24.375C31.35 25.9277 30.0734 27.1875 28.5 27.1875C26.9266 27.1875 25.65 25.9277 25.65 24.375C25.65 22.8223 26.9266 21.5625 28.5 21.5625C30.0734 21.5625 31.35 22.8223 31.35 24.375Z"
-                  fill="#EB154B" />
-              </svg>
-            </div>
-
-          </div>
-
-        </div>
         <!--Venkat Offer Separation-->
 
         <p *ngIf="IfOfferPresent">Price :<span id="offer" style="text-decoration: line-through">
             <!-- <i style="color:#EB154B" class="fa fa-inr" aria-hidden="true"></i> -->
             {{totalPrice}}
-          </span> <span style="margin: 0;padding:0;font-size:15px;">{{offerPrice}}</span></p>
+          </span> <span style="margin: 0;padding:0;font-size:15px;">{{offerPrice}} /-</span></p>
 
         <p> Offer Date :
           {{offerTime | date: 'dd/MM/yyyy'}}</p>
@@ -335,21 +308,6 @@
             <!--<i style="color:#EB154B" class="fa fa-inr" aria-hidden="true"></i>&nbsp;-->Offer Price : Rs: {{totalPrice}}
           </span></p>
         <span id="offer" *ngIf="IfOtherOfferPresent">Offer : {{other_offer}}</span>
-
-
-
-        <!--Venkat Offer Separation-->
-        <!-- <p id="offer" style="margin-left: 20%;">
-          <svg style="margin-left: 16%;" width="20" height="18" viewBox="0 0 29 24" fill="none">
-            <path
-              d="M18.9116 3.42642V1.81135H20.5929V0.22644H15.5488V1.81135H17.2302V3.42642C14.4736 3.62501 12.0001 4.79208 10.1921 6.56606H3.66697V8.15044H8.86504C8.52445 8.65143 8.22897 9.18153 7.98298 9.73587H1.98559V11.3202H7.43614C7.30667 11.8354 7.21773 12.3647 7.1739 12.9057H0.304199V14.4906H7.17384C7.21773 15.0316 7.30662 15.5609 7.43608 16.0755H1.98559V17.6604H7.98298C8.22891 18.2147 8.52445 18.7448 8.86504 19.2453H3.66697V20.8302H10.1921C12.1821 22.7828 14.9784 24 18.0709 24C24.0971 24 28.9999 19.3786 28.9999 13.6981C28.9999 8.28426 24.5466 3.83242 18.9116 3.42642ZM27.2799 14.4906C26.8787 18.666 23.3412 22.0006 18.9116 22.3787V20.8302H17.2302V22.3787C12.8005 22.0006 9.26297 18.666 8.86184 14.4906H10.5046V12.9057H8.86184C9.26297 8.73025 12.8005 5.39566 17.2302 5.01756V6.56606H18.9116V5.01756C23.3412 5.39566 26.8787 8.73025 27.2799 12.9057H25.6371V14.4906H27.2799Z"
-              fill="#EB154B" />
-            <path
-              d="M15.5488 13.6981C15.5488 15.009 16.6802 16.0755 18.0709 16.0755C19.0607 16.0755 19.9634 15.5259 20.3705 14.6754L23.1146 8.94385L17.0341 11.5305C16.1318 11.9144 15.5488 12.7652 15.5488 13.6981ZM17.7258 12.9751L19.7527 12.1128L18.838 14.0235C18.7021 14.3072 18.401 14.4906 18.0709 14.4906C17.6074 14.4906 17.2302 14.1351 17.2302 13.6981C17.2302 13.387 17.4248 13.1032 17.7258 12.9751Z"
-              fill="#EB154B" />
-          </svg>
-          {{Counter}}
-        </p> -->
       </div>
     </div>
   </div>
@@ -380,6 +338,29 @@
         </p>
       </div>
     </div>
+
+    <div  *ngIf="productDetails" class="row mt-1">
+      <div class="col-10">
+        <p style="color: #0d0d0d;margin-left:2% !important;">{{productName}} ({{offer}}&nbsp;{{unit}})</p>
+        
+      </div>
+      
+      <div class="col-2">
+        <div *ngIf="ProductDelivery">
+
+          <!---------  Delivery icon ---------->
+
+          <svg width="16" height="16" viewBox="0 0 38 30" fill="none">
+            <path
+              d="M6.65 0C5.07597 0 3.8 1.25918 3.8 2.8125V5.625H0.95C0.425303 5.625 0 6.04687 0 6.5625C0 7.07813 0.425303 7.5 0.95 7.5H16.15C16.6725 7.5 17.1 7.92187 17.1 8.4375C17.1 8.95313 16.6725 9.375 16.15 9.375H2.85C2.32512 9.375 1.9 9.79687 1.9 10.3125C1.9 10.8281 2.32512 11.25 2.85 11.25H14.25C14.7725 11.25 15.2 11.6719 15.2 12.1875C15.2 12.7031 14.7725 13.125 14.25 13.125H0.95C0.425303 13.125 0 13.5469 0 14.0625C0 14.5781 0.425303 15 0.95 15H12.35C12.8725 15 13.3 15.4219 13.3 15.9375C13.3 16.4531 12.8725 16.875 12.35 16.875H3.8V24.375C3.8 27.4805 6.29969 30 9.5 30C12.6469 30 15.2 27.4805 15.2 24.375H22.8C22.8 27.4805 25.2997 30 28.5 30C31.6469 30 34.2 27.4805 34.2 24.375H36.1C37.1509 24.375 38 23.5371 38 22.5C38 21.4629 37.1509 20.625 36.1 20.625V13.9043C36.1 12.9082 35.7022 11.9531 34.9897 11.25L30.4 6.7207C29.6341 6.01758 28.7197 5.625 27.7103 5.625H24.7V2.8125C24.7 1.25918 23.4234 0 21.85 0H6.65ZM32.3 13.9043V15H24.7V9.375H27.7103L32.3 13.9043ZM9.5 27.1875C7.92656 27.1875 6.65 25.9277 6.65 24.375C6.65 22.8223 7.92656 21.5625 9.5 21.5625C11.0734 21.5625 12.35 22.8223 12.35 24.375C12.35 25.9277 11.0734 27.1875 9.5 27.1875ZM31.35 24.375C31.35 25.9277 30.0734 27.1875 28.5 27.1875C26.9266 27.1875 25.65 25.9277 25.65 24.375C25.65 22.8223 26.9266 21.5625 28.5 21.5625C30.0734 21.5625 31.35 22.8223 31.35 24.375Z"
+              fill="#EB154B" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+   
+
     <div class="col-12 ion-text-left mt-2 mb-2">
       <p *ngIf="productDetails" style="font-size:12px;margin-left:2% !important;">
         {{description}}</p>
@@ -388,20 +369,11 @@
 
 
     <div class="col-6 mt-2 mb-2">
-      <button (click)="showPopup()" *ngIf="storedetailsVisible" class="btn btn-sm report-seller-btn"><svg width="20"
-          height="18" viewBox="0 0 20 18" fill="none">
-          <path
-            d="M19.6812 14.4165L12.0367 1.17586C11.6116 0.439608 10.8502 0 9.99998 0C9.14979 0 8.38838 0.439608 7.96331 1.17586L0.318837 14.4165C-0.106279 15.1528 -0.106279 16.0319 0.318837 16.7682C0.743953 17.5045 1.50528 17.9441 2.35551 17.9441H17.6445C18.4946 17.9441 19.256 17.5045 19.6812 16.7683C20.1063 16.0319 20.1063 15.1528 19.6812 14.4165ZM18.6664 16.1824C18.4531 16.5519 18.0711 16.7724 17.6445 16.7724H2.35551C1.92887 16.7724 1.54684 16.5519 1.33356 16.1824C1.12028 15.813 1.12028 15.3719 1.33356 15.0024L8.97811 1.76175C9.19139 1.3923 9.57342 1.17175 10 1.17175C10.4266 1.17175 10.8087 1.3923 11.0219 1.76175L18.6664 15.0024C18.8797 15.3719 18.8797 15.813 18.6664 16.1824Z"
-            fill="white" />
-          <path d="M10.5858 5.84747H9.41406V11.7061H10.5858V5.84747Z" fill="white" />
-          <path
-            d="M9.99992 12.8779C9.56918 12.8779 9.21875 13.2283 9.21875 13.6591C9.21875 14.0898 9.56918 14.4402 9.99992 14.4402C10.4306 14.4402 10.7811 14.0898 10.7811 13.6591C10.7811 13.2283 10.4307 12.8779 9.99992 12.8779Z"
-            fill="white" />
-        </svg>
+      <button (click)="showPopup()" *ngIf="storedetailsVisible" class="btn btn-sm primarySmallBtn">
         Report Seller</button>
     </div>
-    <div *ngIf="deliveryAvilability" class="col-6 mt-2">
-      <svg style="margin-left: 50%;" width="38" height="25" viewBox="0 0 38 30" fill="none">
+    <div *ngIf="deliveryAvilability" class="col-6 mt-3 ion-text-right">
+      <svg  style="margin: 15px;margin-top:5px" width="20" height="20" viewBox="0 0 38 30" fill="none">
         <path
           d="M6.65 0C5.07597 0 3.8 1.25918 3.8 2.8125V5.625H0.95C0.425303 5.625 0 6.04687 0 6.5625C0 7.07813 0.425303 7.5 0.95 7.5H16.15C16.6725 7.5 17.1 7.92187 17.1 8.4375C17.1 8.95313 16.6725 9.375 16.15 9.375H2.85C2.32512 9.375 1.9 9.79687 1.9 10.3125C1.9 10.8281 2.32512 11.25 2.85 11.25H14.25C14.7725 11.25 15.2 11.6719 15.2 12.1875C15.2 12.7031 14.7725 13.125 14.25 13.125H0.95C0.425303 13.125 0 13.5469 0 14.0625C0 14.5781 0.425303 15 0.95 15H12.35C12.8725 15 13.3 15.4219 13.3 15.9375C13.3 16.4531 12.8725 16.875 12.35 16.875H3.8V24.375C3.8 27.4805 6.29969 30 9.5 30C12.6469 30 15.2 27.4805 15.2 24.375H22.8C22.8 27.4805 25.2997 30 28.5 30C31.6469 30 34.2 27.4805 34.2 24.375H36.1C37.1509 24.375 38 23.5371 38 22.5C38 21.4629 37.1509 20.625 36.1 20.625V13.9043C36.1 12.9082 35.7022 11.9531 34.9897 11.25L30.4 6.7207C29.6341 6.01758 28.7197 5.625 27.7103 5.625H24.7V2.8125C24.7 1.25918 23.4234 0 21.85 0H6.65ZM32.3 13.9043V15H24.7V9.375H27.7103L32.3 13.9043ZM9.5 27.1875C7.92656 27.1875 6.65 25.9277 6.65 24.375C6.65 22.8223 7.92656 21.5625 9.5 21.5625C11.0734 21.5625 12.35 22.8223 12.35 24.375C12.35 25.9277 11.0734 27.1875 9.5 27.1875ZM31.35 24.375C31.35 25.9277 30.0734 27.1875 28.5 27.1875C26.9266 27.1875 25.65 25.9277 25.65 24.375C25.65 22.8223 26.9266 21.5625 28.5 21.5625C30.0734 21.5625 31.35 22.8223 31.35 24.375Z"
           fill="#EB154B" />

@@ -99,21 +99,18 @@
               <img id="product_img" height="75px" width="95px" src="{{product_image}}" alt="">
               <div class="row">
                 <div class="col-12">
-                  <p style="color: #404040;margin-left:20px;font-size: 15px;">{{product}}</p>
+                  <p style="color: #000000;margin-left:20px;font-size: 15px;">{{product}} <span style="color: #EB154B;"> ( {{product_weight}}&nbsp;{{product_unit}}) </span></p>
                 </div>
 
               </div>
             </div>
             <div class="col-6">
-              <div class="mx-3">
-                <ion-badge class="badge ion-text-center" id="kg" slot="start">
-                  {{product_weight}}&nbsp;{{product_unit}}</ion-badge>
-              </div>
+             
               <p *ngIf="IfOfferPresent"><span id="offer"
                   style="font-size: smaller;text-decoration: line-through">
                   <i style="color:#EB154B" class="fa fa-inr" aria-hidden="true"></i>
-                  {{totalPrice}}.00</span>&nbsp; <span
-                  style="margin: 0;padding:0;font-size:15px;">{{offer_price}}.00</span></p>
+                  {{totalPrice}}</span>&nbsp; <span
+                  style="margin: 0;padding:0;font-size:15px;">{{offer_price}}</span></p>
 
               <p *ngIf="IfOtherOfferPresent"><span id="offer" style="font-size: smaller;">
                 <i style="color:#EB154B" class="fa fa-inr" aria-hidden="true"></i>&nbsp;{{totalPrice}}</span></p>

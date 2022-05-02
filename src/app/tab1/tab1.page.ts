@@ -269,13 +269,13 @@ export class Tab1Page implements OnInit, OnDestroy {
         this.contact = response.records.contact_number
         this.websiteLink = response.records.website
 
-        if (response.records.seller_toggle.whatsapp == "false") {
+        if (response.records.seller_toggle.whatsapp == false) {
           this.whatsapp_status = false
         } else {
           this.whatsapp_status = true
         }
 
-        if (response.records.seller_toggle.instagram == "false") {
+        if (response.records.seller_toggle.instagram == false) {
           this.instagram_status = false;
         } else {
           this.instagram_status = true
@@ -285,22 +285,22 @@ export class Tab1Page implements OnInit, OnDestroy {
         } else if (response.records.delivery_availability == "") {
           this.ProductDelivery = false
         }
-        if (response.records.seller_toggle.website == "false") {
+        if (response.records.seller_toggle.website == false) {
           this.website_status = false
         } else {
           this.website_status = true
         }
-        if (response.records.seller_toggle.facebook == "false") {
+        if (response.records.seller_toggle.facebook == false) {
           this.facebook_status = false
         } else {
           this.facebook_status = true
         }
-        if (response.records.seller_toggle.youtube == "false") {
+        if (response.records.seller_toggle.youtube == false) {
           this.youtube_status = false
         } else {
           this.youtube_status = true
         }
-        if (response.records.seller_toggle.contact_number == "false") {
+        if (response.records.seller_toggle.contact_number == false) {
           this.contact_status = false
         } else {
           this.contact_status = true
@@ -462,15 +462,14 @@ export class Tab1Page implements OnInit, OnDestroy {
     this.noDataFound = false;
     this.isvisible = false
     this.offerList();
-    this.store_category_id = 0;
-  
+    this.store_category_id = undefined;
+
   }
 
 
   store_category_id: any;
   clickSlide(item) {
     this.store_category_id = item;
-
     this.isvisible = false
     this.slideName = item;
     // if (this.slideName == "Home") {
@@ -584,8 +583,15 @@ export class Tab1Page implements OnInit, OnDestroy {
 
   locationBased() {
     if (this.city == "All") {
-      this.offerList()
-    } else {
+      if (this.store_category_id == undefined) {
+        this.offerList()
+      } else {
+        this.clickSlide(this.store_category_id)
+      }
+    } else if (this.store_category_id) {
+      this.clickSlide(this.store_category_id)
+    }
+    else {
       this.offerlist = [];
       var city = {
         city: this.city
@@ -624,7 +630,7 @@ export class Tab1Page implements OnInit, OnDestroy {
       }
       );
     }
-    // if (this.store_category_id) {
+    // if (this.store_category_id != 0) {
     //   this.clickSlide(this.store_category_id);
     // }
 
