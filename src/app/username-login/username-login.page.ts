@@ -127,10 +127,10 @@ export class UsernameLoginPage implements OnInit {
             icon: 'success',
             title: 'Login successfully'
           })
-          localStorage.setItem("token", response.token)
-          localStorage.setItem("tbid", response.tbid)
+          localStorage.setItem("user-token", response.token)
+          localStorage.setItem("user-tbid", response.tbid)
           
-          localStorage.setItem("mobilenumber", response.mobile_number)
+          localStorage.setItem("user-mobilenumber", response.mobile_number)
           const obj = {
             id: response.tbid,
             username: response.user_name,

@@ -34,7 +34,7 @@ export class HttpService {
   }
 
   post(serviceName: any, data: any): any {
-    const token: any = ((localStorage.getItem("token")));
+    const token: any = ((localStorage.getItem("user-token")));
 
 
     const url = environment.baseUrl + serviceName;
@@ -53,7 +53,7 @@ export class HttpService {
   }
 
   postFormData(serviceName: any, data: any): any {
-    const token: any = ((localStorage.getItem("token")));
+    const token: any = ((localStorage.getItem("user-token")));
     const url = environment.baseUrl + serviceName;
 
     const headers = {

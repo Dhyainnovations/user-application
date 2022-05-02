@@ -148,8 +148,9 @@ export class SigninPage implements OnInit {
     this.OtpInputcolSize = 8;
     this.submitBtnVisible = true;
   }
-
+  ifNumberCheck:any;
   sendOtp() {
+    this.ifNumberCheck=true
     this.resendOTPIfClicked = true;
     this.countDown();
     this.seconds = 60;
@@ -228,9 +229,9 @@ export class SigninPage implements OnInit {
         this.dismiss()
         this.http.post('/login_using_mobile', Data).subscribe((response: any) => {
           console.log(response);
-          localStorage.setItem("token", response.token)
-          localStorage.setItem("tbid", response.tbid)
-          localStorage.setItem("mobilenumber", response.mobile_number)
+          localStorage.setItem("user-token", response.token)
+          localStorage.setItem("user-tbid", response.tbid)
+          localStorage.setItem("user-mobilenumber", response.mobile_number)
 
           const obj = {
             id: response.tbid,

@@ -54,8 +54,8 @@ export class SignupPage implements OnInit {
   }
 
 
-  userTbid: any = ((localStorage.getItem("tbid")));
-  mobilenumber: any = ((localStorage.getItem("mobilenumber")));
+  userTbid: any = ((localStorage.getItem("user-tbid")));
+  mobilenumber: any = ((localStorage.getItem("user-mobilenumber")));
 
   city: any;
   userName: any = "";

@@ -12,7 +12,7 @@
     <div style="margin-top: -25px !important;" class="row">
       <div class="col-{{MobInputcolSize}}">
         <ion-input [(ngModel)]="mobileNumber" (keyup)="enterMobile()" placeholder="Enter Your Mobile Number"
-          class="primary-input" maxlength="10" (keypress)="numberOnly($event)" type="text"></ion-input>
+          class="primary-input" maxlength="10" (keypress)="numberOnly($event)" type="text" [disabled]="ifNumberCheck"></ion-input>
         <p class="resendotp p-2" *ngIf="resendOTPIfClicked">Resend OTP Will Be Available in {{otpseconds}} Seconds</p>
       </div>
       <div *ngIf="sendOtpBtnVisible" color="dark" class="col-4 mt-1">

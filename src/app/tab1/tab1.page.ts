@@ -236,7 +236,7 @@ export class Tab1Page implements OnInit, OnDestroy {
       })
     });
   }
-
+  Socialdetailavailable:any;
   PopupModel: any;
   //------------- Read one Offer(card) Api call ------------//
   singleCard(product) {
@@ -305,7 +305,13 @@ export class Tab1Page implements OnInit, OnDestroy {
         } else {
           this.contact_status = true
         }
-
+        console.log(response.records.seller_toggle.whatsapp);
+      
+        if (response.records.seller_toggle.whatsapp == false && response.records.seller_toggle.contact_number == false && response.records.seller_toggle.instagram == false && response.records.seller_toggle.youtube == false && response.records.seller_toggle.facebook == false && response.records.seller_toggle.website == false) {
+          this.Socialdetailavailable=true
+        }else{
+          this.Socialdetailavailable=false
+        }
 
         this.unit = response.records.product_unit
         if (this.other_offer == "") {
@@ -362,6 +368,7 @@ export class Tab1Page implements OnInit, OnDestroy {
       } else if (response.records.delivery_availability == "") {
         this.deliveryAvilability = false
       }
+     
     }
       , (error: any) => {
         console.log(error);
@@ -461,9 +468,13 @@ export class Tab1Page implements OnInit, OnDestroy {
     this.offerListVisible = true;
     this.noDataFound = false;
     this.isvisible = false
-    this.offerList();
     this.store_category_id = undefined;
+    if (this.city == "All") {
+      this.offerList();
 
+    } else {
+      this.locationBased()
+    }
   }
 
 
@@ -582,6 +593,7 @@ export class Tab1Page implements OnInit, OnDestroy {
 
 
   locationBased() {
+    // this.city = data.category;
     if (this.city == "All") {
       if (this.store_category_id == undefined) {
         this.offerList()
