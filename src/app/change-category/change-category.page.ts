@@ -13,10 +13,10 @@ export class ChangeCategoryPage implements OnInit {
 
   constructor(private router: Router, private http: HttpService,
     private toastCtrl: ToastController, route: ActivatedRoute) {
-      this.selectedCategories()
+    this.selectedCategories()
     route.params.subscribe(val => {
       this.getCategory()
-     
+
       console.log(this.alredySelectedCategoryList);
       this.CategoryCheck();
     });
@@ -24,7 +24,7 @@ export class ChangeCategoryPage implements OnInit {
 
 
   ngOnInit() {
-    
+
   }
 
   userdetails: any = JSON.parse(atob(localStorage.getItem("24hrs-user-data")));
@@ -52,14 +52,18 @@ export class ChangeCategoryPage implements OnInit {
 
 
   toggleClass(item) {
-    if(item){
-    item.active = !item.active;
-    this.selectedCategoryList.push(item.tbid);
-    // console.log(item);
-    console.log(this.selectedCategoryList.length);
-    this.CategoryCheck();
-  }
-    
+    if (item) {
+      item.active = !item.active;
+      if (item.active == true) {
+        this.selectedCategoryList.push(item.tbid);
+      } else {
+        this.selectedCategoryList = this.selectedCategoryList.filter(e => e !== item.tbid);
+      }
+      // console.log(item);
+      console.log(this.selectedCategoryList);
+      this.CategoryCheck();
+    }
+   
   }
 
   CategoryVerification: any;
@@ -75,6 +79,7 @@ export class ChangeCategoryPage implements OnInit {
       }
       console.log(Data);
       this.http.post('/update_store_category', Data).subscribe((response: any) => {
+        this.selectedCategoryList = [];
       }, (error: any) => {
         console.log(error);
       });

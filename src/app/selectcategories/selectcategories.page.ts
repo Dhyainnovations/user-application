@@ -43,21 +43,23 @@ export class SelectcategoriesPage implements OnInit {
   }
 
 
+
+
   toggleClass(item) {
     if (item) {
       item.active = !item.active;
-      console.log(item.active);
-      console.log(item.tbid);
-
       if (item.active == true) {
-        console.log(item.tbid);
         this.selectedCategoryList.push(item.tbid);
       } else {
-        this.selectedCategoryList.pop(item.tbid);
+        this.selectedCategoryList = this.selectedCategoryList.filter(e => e !== item.tbid);
       }
+      // console.log(item);
       console.log(this.selectedCategoryList);
+ 
     }
+   
   }
+
 
 
   verify() {
