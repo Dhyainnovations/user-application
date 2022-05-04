@@ -187,11 +187,8 @@
       <div class="row mb-2">
         <div *ngIf="resultProductCardVisible" id="productCard" class="col-12 ion-text-center">
           <div class="row mt-2">
-            <div class="col-4">
-              <img src="{{storeLogo}}" style="margin:1px;" height="25px" width="25px" alt="">
-              
-            </div>
-            <div class="col-8 ion-text-left">
+            
+            <div class="col-12 ion-text-left">
               <span style="font-size: 15px;color:#404040;"><b>{{storeName}}</b></span>
 
             </div>
@@ -248,7 +245,7 @@
     <!-- set alarm button for product -->
     <div *ngIf="forProductbtnVisible" class="col-12 ion-text-center mt-4 mb-2">
 
-      <ion-button style="width: 90%;margin: auto;" color="none"  class="secondaryLargeBtn" expand="block"  (click)="setAlarmForProduct()">
+      <ion-button style="width: 90%;margin: auto;" color="none"  class="secondaryLargeBtn mb-5" expand="block"  (click)="setAlarmForProduct()">
         <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="30" fill="currentColor"
         class="bi bi-alarm-fill" viewBox="0 0 16 16">
         <path
@@ -261,7 +258,7 @@
     <!-- set alarm button for store -->
     <div *ngIf="forStorebtnVisible" class="col-12 ion-text-center mt-4 mb-2">
 
-      <ion-button style="width: 90%;margin: auto;" color="none"  class="secondaryLargeBtn" expand="block"  (click)="setAlarmForStore()">
+      <ion-button style="width: 90%;margin: auto;" color="none"  class="secondaryLargeBtn mb-5" expand="block"  (click)="setAlarmForStore()">
         <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="30" fill="currentColor"
         class="bi bi-alarm-fill" viewBox="0 0 16 16">
         <path

@@ -104,6 +104,29 @@ export class UsernameLoginPage implements OnInit {
             title: 'You have to verify your account'
           })
         }
+
+        if (response.message == "Invalid Credentials") {
+          this.LoginAccount = false;
+          this.VerifyAccount = true;
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'error',
+            title: 'Invalid Credentials'
+          })
+        }
+
+        
         if (response.message == "Login Successfully") {
           this.dismiss()
           if (response.user_status == "First Login") {
