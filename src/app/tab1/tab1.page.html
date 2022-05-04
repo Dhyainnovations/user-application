@@ -237,30 +237,41 @@
 <!----- Single product details card Pop-Up ----->
 <div @fadein *ngIf="popUpisvisible" class="container mb-4" >
   <div class="card pop-up-card" style="margin-top: -25px;">
-    <div class="container" style="padding-top:45px;padding-bottom: 45px;">
-      <div style="font-size: 13px;" class="row">
+    <div class="container" style="padding-top:16px;padding-bottom: 42px;">
+      <div style="font-size: 15px;" class="row">
         <div class="col-10">
           <h5>Report Seller</h5>
         </div>
         <div class="col-2">
-          <ion-icon (click)="hidepopup()" style="margin:15px;cursor:pointer;color:#eb154b" name="close"></ion-icon>
+          <ion-icon (click)="hidepopup()" style="margin-top:15px;cursor:pointer;color:#eb154b;font-size: 20px;" name="close"></ion-icon>
         </div>
-        <div class="col-4">
-          <input type="checkbox" (change)="spam()" [(ngModel)]="spamMsg"> Spam Msg
+        <div class="col-2">
+          <input type="checkbox" (change)="spam()" [(ngModel)]="spamMsg"> 
         </div>
-        <div class="col-4">
-          <input type="checkbox" (change)="storeNA()" [(ngModel)]="storeNa"> store NA
+        <div class="col-10">
+          <p>Spam Msg</p>
         </div>
-        <div class="col-4">
-          <input type="checkbox" (change)="OfferDenaid()" [(ngModel)]="offerDenaid"> Offer Denaid
+        <div class="col-2">
+          <input type="checkbox" (change)="storeNA()" [(ngModel)]="storeNa"> 
         </div>
-        <div class="col-12 ion-text-center mt-3">
+        <div class="col-10">
+          <p>Store NA</p>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" (change)="OfferDenaid()" [(ngModel)]="offerDenaid">
+        </div>
+        <div class="col-10">
+          <p> Offer Denaid</p>
+        </div>
+        <div class="col-12 ion-text-left mt-3">
           <p>Others:</p>
         </div>
-        <div class="col-12 ion-text-center">
-          <input [(ngModel)]="other" type="text">
-          <button (click)="reportSeller()" class="btn btn-sm submit-btn">Submit</button>
-        </div>
+        <div class="col-11 offset-1">
+          <input [(ngModel)]="other" type="text" >
+          </div>
+          <ion-button style="width: 84%;
+          margin-left: 6%;
+          margin-top: 6%;" color="none" class="secondarySmallBtn mb-2"  expand="block" (click)="reportSeller()"><b>Submit</b></ion-button>
       </div>
     </div>
   </div>

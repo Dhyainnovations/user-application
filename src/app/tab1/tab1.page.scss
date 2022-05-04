@@ -171,12 +171,12 @@ ion-slide {
 
 //Pop-Up-Card
 .pop-up-card {
-  box-shadow   : 2px 2px 3px rgba(128, 128, 128, 0.664);
+  box-shadow   : 2px 2px 2px 3px rgba(128, 128, 128, 0.664);
   position     : absolute;
   top          : 35%;
   z-index      : 999;
   left         : 2%;
-  border-radius: 10px;
+  border-radius: 8px;
   width        : 95%;
 }
 
@@ -263,4 +263,24 @@ select {
  
   // border-bottom: 2px solid var(--ion-color-primary) !important;
 
+}
+
+
+input[type=text] {
+  font-size: 14px;
+  margin: 0 5px;
+  margin-top: -12px;
+  margin-left: -20px;
+  margin-bottom: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  background-color: #fff;
+  border-bottom: 2px solid var(--ion-color-primary);
+}
+
+
+input:focus {
+  outline: none !important;
+  border-bottom: 2px solid var(--ion-color-success) !important;
 }

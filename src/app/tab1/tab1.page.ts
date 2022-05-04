@@ -138,6 +138,7 @@ export class Tab1Page implements OnInit, OnDestroy {
 
   hidepopup() {
     this.popUpisvisible = false;
+    this.isvisible=true;
   }
   showPopup() {
     this.popUpisvisible = true;
@@ -186,6 +187,7 @@ export class Tab1Page implements OnInit, OnDestroy {
 
   // ----------- Seller report Api call -----------//
   reportSeller() {
+    this.isvisible=false;
     const obj = {
       store_name: this.storeID,
       spam_msg: this.spam_msg,
