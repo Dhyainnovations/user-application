@@ -16,7 +16,7 @@
     <div class="col-4">
       <h5 style="color:#121212;margin-top:10px"><b></b></h5>
     </div>
-    <div class="col-8 mt-2 mx-2" style="text-align: right;width: 90%;">
+    <div class="col-8 mt-2 mx-4" style="text-align: right;width: 90%;">
       <svg (click)="notification()" style="margin:3px;" width="26" height="26" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -182,6 +182,7 @@
         </div>
         <!------------ Social icons ------------->
         <div id="social-media-icon-div">
+          <p *ngIf="Socialdetailavailable" class="small text-center" style="margin-top: 5px;margin-bottom: -10px;">No Contact Information Available</p>
           <div class="row p-2">
             <div class="col-2" *ngIf="contact_status"> <a href="tel:{{contact}}"><svg width="16" height="16"
                   fill="currentColor" class="bi bi-telephone social-icon" viewBox="0 0 16 16">

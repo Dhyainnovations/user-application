@@ -82,7 +82,6 @@ export class Tab3Page {
   loginUserToken: any;
 
   UserDetails() {
-
     this.http.get('/user_details',).subscribe((response: any) => {
       console.log(response);
       this.loginUserTbid = response.records.tbid;
@@ -126,20 +125,15 @@ export class Tab3Page {
       user_name: this.loginUserName,
       mobile_number: this.updateMobile,
       location: this.city
-
     }
-
     console.log(updateData);
-
     this.http.post('/user_update_profile', updateData).subscribe((response: any) => {
       console.log(response);
       if (response.success == "true") {
         this.updateUsername = response.user_name
         this.PopupModel = false;
         localStorage.setItem("location", this.city);
-
       } else {
-
       }
     }, (error: any) => {
       console.log(error);

@@ -136,7 +136,7 @@ export class Tab2Page {
     this.productNameList = []
     this.isVisible = true;
     this.forproductlist = false;
-
+    this.storeTbid= tbid;
 
     const obj = {
       store_id: tbid
@@ -183,7 +183,6 @@ export class Tab2Page {
         this.resultProductCardVisible = false;
         this.productNameList = [];
         this.getStoreList = []
-        alert("Clear")
       }
       this.router.navigate(['/myalarms'])
     }, (error: any) => {

@@ -5,6 +5,7 @@
   margin-bottom: 20px;
   margin-right : 4px;
   cursor       : pointer;
+  z-index: 3;
 }
 
 #social-media-icon-div {
@@ -173,7 +174,7 @@ ion-slide {
   box-shadow   : 2px 2px 3px rgba(128, 128, 128, 0.664);
   position     : absolute;
   top          : 35%;
-  z-index      : 1;
+  z-index      : 999;
   left         : 2%;
   border-radius: 10px;
   width        : 95%;
@@ -188,11 +189,7 @@ ion-checkbox {
   margin: 10px;
 }
 
-// .card{
-//   width:100% !important;
-//   height:100% !important;
-//   box-shadow: 2px 2px 2px 2px #fff;
-// }
+
 input {
   border-radius: 3px;
   width        : 90%;
@@ -233,7 +230,7 @@ ion-content {
 }
 
 .productDetailsCard{
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #popupCard {
@@ -244,7 +241,7 @@ ion-content {
   border          : 1px solid #ebe6e6;
   border-radius   : 5px;
   box-shadow      : 2px 2px 2px 2px #ccc;
-  z-index         : 2;
+  z-index         : 3;
   top             : 32%;
   left:2%;
   padding         : 10px;

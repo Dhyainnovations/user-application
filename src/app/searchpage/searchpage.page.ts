@@ -89,6 +89,7 @@ export class SearchpagePage implements OnInit {
   store_name: any;
   offer_price: any;
   offer_end_time: any;
+  Socialdetailavailable:any;
   selectSearchProduct(name) {
     this.searchProductName = name;
     const s = name;
@@ -115,42 +116,45 @@ export class SearchpagePage implements OnInit {
         this.IfOfferPresent = false;
         this.IfOtherOfferPresent = true;
       }
-      if (response.records[0].seller_toggle.whatsapp == "false") {
+      if (response.records[0].seller_toggle.whatsapp == false) {
         this.whatsapp_status = false
       } else {
         this.whatsapp_status = true
       }
 
-      if (response.records[0].seller_toggle.instagram == "false") {
+      if (response.records[0].seller_toggle.instagram == false) {
         this.instagram_status = false;
       } else {
         this.instagram_status = true
       }
 
-      if (response.records[0].seller_toggle.website == "false") {
+      if (response.records[0].seller_toggle.website == false) {
         this.website_status = false
       } else {
         this.website_status = true
       }
-      if (response.records[0].seller_toggle.facebook == "false") {
+      if (response.records[0].seller_toggle.facebook == false) {
         this.facebook_status = false
       } else {
         this.facebook_status = true
       }
-      if (response.records[0].seller_toggle.youtube == "false") {
+      if (response.records[0].seller_toggle.youtube == false) {
         this.youtube_status = false
       } else {
         this.youtube_status = true
       }
-      if (response.records[0].seller_toggle.contact_number == "false") {
+      if (response.records[0].seller_toggle.contact_number == false) {
         this.contact_status = false
       } else {
         this.contact_status = true
       }
+      if (response.records[0].seller_toggle.whatsapp == false && response.records[0].seller_toggle.contact_number == false && response.records[0].seller_toggle.instagram == false && response.records[0].seller_toggle.youtube == false && response.records[0].seller_toggle.facebook == false && response.records[0].seller_toggle.website == false) {
+        this.Socialdetailavailable=true
+      }else{
+        this.Socialdetailavailable=false
+      }
       console.log(this.other_offer);
-
-      this.searchRecord = response.records
-
+      this.searchRecord = response.records;
     }, (error: any) => {
       console.log(error);
     });

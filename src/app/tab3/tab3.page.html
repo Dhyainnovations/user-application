@@ -39,7 +39,8 @@
   <div class="row">
     <div class="col-9 mt-1 mx-3">
       <p style="color: #121212;font-size: 28px;"><b>
-          <svg style="margin-top: -4px !important;" width="22" height="36" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg style="margin-top: -4px !important;" width="22" height="36" viewBox="0 0 25 25" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M12.5 12.5007C16.4453 12.5007 19.6429 9.70223 19.6429 6.25037C19.6429 2.7985 16.4453 0 12.5 0C8.55469 0 5.35714 2.7985 5.35714 6.25037C5.35714 9.70223 8.55469 12.5007 12.5 12.5007ZM15.3292 14.8446H9.67076C4.33092 14.8446 0 18.6339 0 23.307C0 24.2417 0.866071 25 1.93415 25H23.067C24.135 25.0015 25 24.2446 25 23.307C25 18.6339 20.6696 14.8446 15.3292 14.8446Z"
               fill="black" />
@@ -82,18 +83,19 @@
 
   <!------------ Show category's List ----------------->
   <div class="row mt-3">
-   
 
-      
-    </div>
+
+
+  </div>
   <div class="container welcomecard">
     <div class="row mt-3">
       <div class="col-6 ">
-        <p >Categories : </p>
-  
+        <p>Categories : </p>
+
       </div>
       <div class="col-6 ion-text-right">
-       <svg style="margin-left: -10px;" (click)="changeCategory()" width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <svg style="margin-left: -10px;" (click)="changeCategory()" width="26" height="26" viewBox="0 0 24 24"
+          fill="none">
           <path
             d="M13.5 5.5L6.45321 12.5468C6.22845 12.7716 6.11607 12.8839 6.04454 13.0229C5.97301 13.1619 5.94689 13.3187 5.89463 13.6322L5.11508 18.3095C5.06262 18.6243 5.03639 18.7817 5.12736 18.8726C5.21833 18.9636 5.37571 18.9374 5.69048 18.8849L10.3678 18.1054L10.3678 18.1054C10.6813 18.0531 10.8381 18.027 10.9771 17.9555C11.1161 17.8839 11.2284 17.7716 11.4532 17.5468L11.4532 17.5468L18.5 10.5C19.5171 9.48295 20.0256 8.97442 20.1384 8.36277C20.1826 8.12295 20.1826 7.87705 20.1384 7.63723C20.0256 7.02558 19.5171 6.51705 18.5 5.5C17.4829 4.48295 16.9744 3.97442 16.3628 3.8616C16.1229 3.81737 15.8771 3.81737 15.6372 3.8616C15.0256 3.97442 14.5171 4.48294 13.5 5.5Z"
             fill="#0D0D0D" />
@@ -103,25 +105,27 @@
         </svg>
       </div>
     </div>
-    
 
-    
-      <div class="col-12 mb-4">
-        <div  id="SelectedList">
-          <ion-chip  *ngFor="let category of getCategoryList">
-            <ion-label><b>{{category.store_category}}</b></ion-label>
-          </ion-chip>
-        </div>
+
+
+    <div class="col-12 mb-4">
+      <div id="SelectedList">
+        <ion-chip *ngFor="let category of getCategoryList">
+          <ion-label><b>{{category.store_category}}</b></ion-label>
+        </ion-chip>
       </div>
     </div>
+  </div>
 
 
 
   <!------------ Delete Account button ----------------->
   <div class="ion-text-center" style="margin-top: 70%;">
 
-    <ion-button style="width: 65%;margin: auto;" color="none"  class="primarySmallBtn" expand="block"  (click)="deleteAccount()">
-      <b>Delete My Account</b></ion-button>
+    <ion-button style="width: 65%;margin: auto;" color="none" class="primarySmallBtn" expand="block"
+      (click)="deleteAccount()">
+      <b>Delete My Account</b>
+    </ion-button>
 
   </div>
 </ion-content>
@@ -154,17 +158,13 @@
           </defs>
         </svg>
       </div>
-      <h5 style="margin:10px; color: #5C5C5C;"> <b>Edit Here:</b></h5>
-      <div class="row ion-text-center mb-2">
+      <!-- <h5 style="margin:10px; color: #5C5C5C;"> <b>Edit Here:</b></h5> -->
+      <!-- <div class="row ion-text-center mb-2">
         <div class="col-4">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg  width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
-              fill="#7E869E" fill-opacity="0.25" />
-            <circle cx="12" cy="10" r="4" fill="white" />
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M18.2209 18.2462C18.2791 18.3426 18.2613 18.466 18.1795 18.5432C16.5675 20.0662 14.3928 21 12 21C9.60731 21 7.43267 20.0663 5.8206 18.5433C5.7388 18.466 5.72104 18.3427 5.77921 18.2463C6.9434 16.318 9.29218 15 12.0001 15C14.708 15 17.0567 16.3179 18.2209 18.2462Z"
-              fill="white" />
+              d="M12.5 12.5007C16.4453 12.5007 19.6429 9.70223 19.6429 6.25037C19.6429 2.7985 16.4453 0 12.5 0C8.55469 0 5.35714 2.7985 5.35714 6.25037C5.35714 9.70223 8.55469 12.5007 12.5 12.5007ZM15.3292 14.8446H9.67076C4.33092 14.8446 0 18.6339 0 23.307C0 24.2417 0.866071 25 1.93415 25H23.067C24.135 25.0015 25 24.2446 25 23.307C25 18.6339 20.6696 14.8446 15.3292 14.8446Z"
+              fill="black" />
           </svg>
 
         </div>
@@ -205,12 +205,71 @@
             </ion-select>
           </ion-item>
         </div>
-      </div>
+      </div> -->
 
-      <div style="width: 100%; text-align: center;">
-        <button type="button" (click)="updateProfile()" class="btn btn-success btn-sm update-btn"><b>Update</b></button>
+
+      <div class="container">
+          <div class="row ion-text-center mb-2">
+            <div class="col-2">
+              <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.5 12.5007C16.4453 12.5007 19.6429 9.70223 19.6429 6.25037C19.6429 2.7985 16.4453 0 12.5 0C8.55469 0 5.35714 2.7985 5.35714 6.25037C5.35714 9.70223 8.55469 12.5007 12.5 12.5007ZM15.3292 14.8446H9.67076C4.33092 14.8446 0 18.6339 0 23.307C0 24.2417 0.866071 25 1.93415 25H23.067C24.135 25.0015 25 24.2446 25 23.307C25 18.6339 20.6696 14.8446 15.3292 14.8446Z"
+                  fill="black" />
+              </svg>
+            </div>
+            <div class="col-9 offset-1">
+              <input style="width: 90%;" type="text" id="edit-field" placeholder="Username" [(ngModel)]="loginUserName"
+              maxlength="10">
+            </div>
+          </div>
+
+          <div class="row ion-text-center mb-2">
+            <div class="col-2">
+              <svg width="20" height="20" viewBox="0 0 111 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M110.827 83.9016L105.786 105.755C105.078 108.844 102.363 111.006 99.1824 111.006C44.4867 111.001 0 66.5145 0 11.8167C0 8.63846 2.16125 5.91983 5.25082 5.21524L27.1039 0.174714C30.2865 -0.562829 33.5385 1.08916 34.8609 4.10307L44.9463 27.6255C46.1253 30.3962 45.3301 33.6243 42.9995 35.5278L31.3271 44.8999C38.6939 59.9066 50.8952 72.1079 65.9062 79.479L75.4627 67.8153C77.3462 65.4783 80.5986 64.6696 83.3692 65.8696L106.892 75.9528C109.721 77.4411 111.564 80.7364 110.827 83.9016Z"
+                  fill="black" />
+              </svg>
+            </div>
+            <div class="col-9 offset-1">
+              <input disabled type="text" id="edit-field" placeholder="Mobile number" [(ngModel)]="mobileNumber" style="width: 90%;" >
+
+            </div>
+          </div>
+          <div class="row ion-text-center mb-2">
+            <div class="col-2 mt-4">
+              <svg width="20" height="20" viewBox="0 0 66 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M28.9266 85.8C19.9547 74.7656 0 48.0219 0 33C0 14.7744 14.7744 0 33 0C51.2188 0 66 14.7744 66 33C66 48.0219 45.8906 74.7656 37.0734 85.8C34.9594 88.4297 31.0406 88.4297 28.9266 85.8ZM33 44C39.0672 44 44 39.0672 44 33C44 26.9328 39.0672 22 33 22C26.9328 22 22 26.9328 22 33C22 39.0672 26.9328 44 33 44Z"
+                  fill="black" />
+              </svg>
+            </div>
+            <div class="col-10">
+              <ion-item>
+                <ion-label style="font-size:15px !important;color: #121212;margin-left: 0px;">{{city}}</ion-label>
+                <ion-select style="font-size: 0px;" [(ngModel)]="city" interface="popover">
+                  <ion-select-option *ngFor="let location of locationsList" [value]="location.city">{{location.city}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </div>
+      </div>
+      <div style="width: 50%; text-align: center;margin: auto; padding-bottom: 10px;">
+        <ion-button type="button" class="secondarySmallBtn " expand="block" color="none" (click)="updateProfile()">
+          <b>Update</b></ion-button>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
 
 </div>
