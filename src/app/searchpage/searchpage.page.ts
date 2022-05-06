@@ -50,6 +50,7 @@ export class SearchpagePage implements OnInit {
 
 
   searchProduct() {
+    this.searchProductList=[];
     console.log(this.searchProductName);
     this.getProductList()
     this.isVisible = true;
@@ -90,6 +91,7 @@ export class SearchpagePage implements OnInit {
   offer_price: any;
   offer_end_time: any;
   Socialdetailavailable:any;
+  ProductDelivery:any;
   selectSearchProduct(name) {
     this.searchProductName = name;
     const s = name;
@@ -128,6 +130,14 @@ export class SearchpagePage implements OnInit {
         this.instagram_status = true
       }
 
+
+      if (response.records[0].seller_toggle.delivery_availability == "1") {
+        this.ProductDelivery = true;
+      } else {
+        this.ProductDelivery = false
+      }
+      
+
       if (response.records[0].seller_toggle.website == false) {
         this.website_status = false
       } else {
@@ -155,14 +165,17 @@ export class SearchpagePage implements OnInit {
       }
       console.log(this.other_offer);
       this.searchRecord = response.records;
+      this.HideOfferCard=false;
     }, (error: any) => {
       console.log(error);
+      this.cardVisible=false;
+      this.HideOfferCard=true;
     });
 
 
   }
 
-
+  HideOfferCard:any;
   getProductList() {
     this.http.get('/list_all_product_user').subscribe((response: any) => {
       this.searchProductList = response.records;

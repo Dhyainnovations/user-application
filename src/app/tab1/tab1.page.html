@@ -198,7 +198,7 @@
                       d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z" />
                   </svg>
 
-                  {{offer.offer_time}}
+                  {{offer.offer_time | slice:11:20}}
                 </p>
               </div>
             </div>
@@ -216,7 +216,7 @@
 
   <div class="row">
     <div class="col-12 ">
-      <hr style="width: 90%;margin: auto;">
+
 
       <h6 style="color: #272A3F;margin-left:5%;"> Expired Offers</h6>
     </div>
@@ -329,26 +329,24 @@
       <div class="col-4">
         <img id="product_img" height="75px" width="95px" style="margin-left:5px;border-radius: 5px;"
           src="{{productImage}}" alt="">
-
       </div>
-
       <div class="col-8">
-
         <!--Venkat Offer Separation-->
-
-        <p *ngIf="IfOfferPresent">Price :<span id="offer" style="text-decoration: line-through">
+        <p *ngIf="IfOfferPresent"><b>Price :</b><span id="offer" style="text-decoration: line-through">
             <!-- <i style="color:#EB154B" class="fa fa-inr" aria-hidden="true"></i> -->
             {{totalPrice}}
           </span> <span style="margin: 0;padding:0;font-size:15px;">{{offerPrice}} /-</span></p>
-
-        <p> <b>Offer Date :</b>
-          {{offerTime | date: 'dd/MM/yyyy'}}</p>
-        <p> <b>Offer Time :</b>
-          {{offerTime | date: 'h:mm:ss a'}}</p>
+          <p *ngIf="!IfOfferPresent"><b>Price :</b><span id="offer" style="text-decoration: line-through">
+            <!-- <i style="color:#EB154B" class="fa fa-inr" aria-hidden="true"></i> -->
+            {{totalPrice}}
+          </span> <span style="margin: 0;padding:0;font-size:15px;">{{offerPrice}} /-</span></p>
+        <!-- <p> <b>Offer Date :</b>
+          {{offerTime | date: 'dd/MM/yyyy'}}</p> -->
+        <p> <b>Offer Time :</b><br>
+          {{offerTime}}</p>
         <p *ngIf="IfOfferPresent">
           <b>Offer :</b> {{offer}}%
         </p>
-
         <p> <span id="offer" *ngIf="IfOtherOfferPresent">
             <!--<i style="color:#EB154B" class="fa fa-inr" aria-hidden="true"></i>&nbsp;--> <b>Offer Price :</b> Rs:
             {{totalPrice}}

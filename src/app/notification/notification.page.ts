@@ -43,7 +43,6 @@ export class NotificationPage implements OnInit {
       }
       this.notificationList = response.records
       console.log(this.notificationList);
-      // this.ScheduleNotification()
     }, (error: any) => {
       console.log(error);
       this.isShown = true
@@ -52,12 +51,12 @@ export class NotificationPage implements OnInit {
 
   productAlarmList: any;
   noDataFound: any;
+  AlarmList:any;
   getproductAlarmList() {
     this.http.get('/product_read_alarm').subscribe((response: any) => {
-      this.notificationList = response.records
+      this.AlarmList = response.records
       console.log(response);
       this.noDataFound = false;
-
     }, (error: any) => {
       console.log(error);
     });

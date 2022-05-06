@@ -67,10 +67,9 @@
         <textarea [(ngModel)]="problemDescription"
           style="background-color: transparent;border: 1px solid rgb(158, 150, 150);" class="form-control"
           id="exampleFormControlTextarea1" maxlength="100" rows="3"></textarea>
-        <div class="pt-2">
-          <p style="font-size: 12px;">Description : {{description}} <span>/ {{time}}</span></p>
-
-
+        <div class="pt-2" [ngClass]='description != "Not Available" ? "show" : "hidden"'>
+          <p style="font-size: 12px;" >Description :
+            {{description}} <span>/ {{time}}</span></p>
         </div>
       </div>
 

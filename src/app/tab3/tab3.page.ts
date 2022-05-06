@@ -39,8 +39,8 @@ import {
         animate('900ms 300ms ease-out', style({ transform: 'translateY(0%)', opacity: 1 },))
       ])
     ])
-  ]
-})
+  ] 
+}) 
 
 
 
@@ -65,7 +65,6 @@ export class Tab3Page {
 
   userdetails: any = JSON.parse(atob(localStorage.getItem("24hrs-user-data")));
   city: any = ((localStorage.getItem("location")));
-  mobileNumber: any = ((localStorage.getItem("user-mobilenumber")));
   locationsList: any = []
   PopupModel: any = false;
   password: any = ''
@@ -88,8 +87,7 @@ export class Tab3Page {
       if (response.records.user_name == null) {
         this.loginUserName = "User";
       } else {
-        this.loginUserName = response.records.user_name;
-      }
+        this.loginUserName = response.records.user_name;      }
       this.loginUserNumber = response.records.mobile_number;
       this.loginUserLocation = response.records.location;
       this.loginUserToken = response.records.token;
@@ -246,6 +244,7 @@ export class Tab3Page {
 
 
   locationList() {
+    this.getSelectCategory()
     this.locationsList = [];
     this.http.get('/list_location',).subscribe((response: any) => {
       console.log(response);

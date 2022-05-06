@@ -25,14 +25,16 @@ export class Tab1Page implements OnInit, OnDestroy {
   }
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private http: HttpService, route: ActivatedRoute, public popoverController: PopoverController, private popover: PopoverController) {
     route.params.subscribe(val => {
-      this.getSelectCategory()
+
       this.locationList()
       this.UserDetails()
       this.offerList()
     });
+
   }
 
   ngOnInit() {
+
     this.start()
   }
   ngOnDestroy() { this.clearTimer(); }
@@ -116,7 +118,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   loginUserToken: any;
 
   UserDetails() {
-
+    this.getSelectCategory();
     this.http.get('/user_details',).subscribe((response: any) => {
       localStorage.setItem("location", response.records.location);
       this.loginUserTbid = response.records.user_name;
@@ -128,21 +130,20 @@ export class Tab1Page implements OnInit, OnDestroy {
       this.loginUserNumber = response.records.user_name;
       this.loginUserLocation = response.records.user_name;
       this.loginUserToken = response.records.user_name;
-
     }, (error: any) => {
       console.log(error);
     });
-
   }
 
 
   hidepopup() {
     this.popUpisvisible = false;
-    this.isvisible=true;
+    this.isvisible = true;
   }
+
+
   showPopup() {
     this.popUpisvisible = true;
-
   }
   //--------------- Ion slide option ----------//
   slideOpts = {
@@ -163,7 +164,6 @@ export class Tab1Page implements OnInit, OnDestroy {
     } else {
       this.spam_msg = ""
     }
-
   }
 
   // ----------- storeNA report -----------//
@@ -178,16 +178,16 @@ export class Tab1Page implements OnInit, OnDestroy {
   // ----------- OfferDenaid report -----------//
   OfferDenaid(val) {
     if (this.store == true) {
-      this.offer_denied = "offer Denaid"
+      this.offer_denied = "offer Denaid";
     } else {
-      this.offer_denied = ""
+      this.offer_denied = "";
     }
   }
 
 
   // ----------- Seller report Api call -----------//
   reportSeller() {
-    this.isvisible=false;
+    this.isvisible = false;
     const obj = {
       store_name: this.storeID,
       spam_msg: this.spam_msg,
@@ -238,7 +238,7 @@ export class Tab1Page implements OnInit, OnDestroy {
       })
     });
   }
-  Socialdetailavailable:any;
+  Socialdetailavailable: any;
   PopupModel: any;
   //------------- Read one Offer(card) Api call ------------//
   singleCard(product) {
@@ -249,8 +249,6 @@ export class Tab1Page implements OnInit, OnDestroy {
     this.storedetailsVisible = false
     this.productDetails = true
     this.http.get('/readone_offer_user?o=' + o).subscribe((response: any) => {
-
-
       if (response.success == "true") {
         this.contact = response.records.contact_number;
         this.storeTbid = response.records.tbid
@@ -270,13 +268,11 @@ export class Tab1Page implements OnInit, OnDestroy {
         this.facebook_href = "https://www.facebook.com/" + response.records.facebook + "/";
         this.contact = response.records.contact_number
         this.websiteLink = response.records.website
-
         if (response.records.seller_toggle.whatsapp == false) {
           this.whatsapp_status = false
         } else {
           this.whatsapp_status = true
         }
-
         if (response.records.seller_toggle.instagram == false) {
           this.instagram_status = false;
         } else {
@@ -308,13 +304,11 @@ export class Tab1Page implements OnInit, OnDestroy {
           this.contact_status = true
         }
         console.log(response.records.seller_toggle.whatsapp);
-      
         if (response.records.seller_toggle.whatsapp == false && response.records.seller_toggle.contact_number == false && response.records.seller_toggle.instagram == false && response.records.seller_toggle.youtube == false && response.records.seller_toggle.facebook == false && response.records.seller_toggle.website == false) {
-          this.Socialdetailavailable=true
-        }else{
-          this.Socialdetailavailable=false
+          this.Socialdetailavailable = true
+        } else {
+          this.Socialdetailavailable = false
         }
-
         this.unit = response.records.product_unit
         if (this.other_offer == "") {
           this.IfOfferPresent = true;
@@ -325,13 +319,11 @@ export class Tab1Page implements OnInit, OnDestroy {
         }
       }
       console.log(response.records);
-
       this.scrollToTop();
     }, (error: any) => {
       console.log(error);
     });
   }
-
   whatsapp_status: any = false;
   instagram_status: any = false;
   website_status: any = false;
@@ -370,7 +362,6 @@ export class Tab1Page implements OnInit, OnDestroy {
       } else if (response.records.delivery_availability == "") {
         this.deliveryAvilability = false
       }
-     
     }
       , (error: any) => {
         console.log(error);
@@ -411,6 +402,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   getSelectCategory() {
     this.http.get('/store_category_user').subscribe((response: any) => {
       this.getCategoryList = response.records
+      console.log(this.getCategoryList);
 
     }, (error: any) => {
       console.log(error);
