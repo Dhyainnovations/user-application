@@ -48,7 +48,8 @@ export class UsernameLoginPage implements OnInit {
 
   userInfo = null;
   password: any;
-
+  passwordType: string;
+  show: boolean = true;
   constructor(public modalCtrl: ModalController, private router: Router, private http: HttpService,
     private toastCtrl: ToastController, route: ActivatedRoute, public platform: Platform) {
 
@@ -56,8 +57,21 @@ export class UsernameLoginPage implements OnInit {
   }
 
   ngOnInit() {
-
+    this.passwordType = 'password'
   }
+
+
+  onClick() {
+    if (this.passwordType === 'password') {
+      this.passwordType = 'text';
+      this.show = true;
+    } else {
+      this.passwordType = 'password';
+      this.show = false;
+    }
+  }
+
+
 
   mailidCheckFalse() {
     this.isNotEmailAlert = false;

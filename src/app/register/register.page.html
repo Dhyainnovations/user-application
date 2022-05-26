@@ -22,20 +22,40 @@
       <div class="col-{{MobInputcolSize}}">
         <ion-input style="color: #000000;" [(ngModel)]="username" (keyup)="usernameCheckFalse()"
           placeholder="Enter Your User Name" class="primary-input "></ion-input>
-        <p class="small" style="color: #EB154B;" *ngIf="isUserNameAlert">Enter Your Username</p>
+        <p class="small mx-1" style="color: #EB154B;" *ngIf="isUserNameAlert">Enter Your Username</p>
 
         <ion-input style="color: #000000;" [(ngModel)]="mailid" (keyup)="mailidCheckFalse()"
           placeholder="Enter Your Mail ID" class="primary-input mt-3"></ion-input>
-        <p class="small" style="color: #EB154B;" *ngIf="isNotEmailAlert">Enter Valid Mail ID</p>
+        <p class="small mx-1" style="color: #EB154B;" *ngIf="isNotEmailAlert">Enter Valid Mail ID</p>
 
         <ion-input style="color: #000000;" [(ngModel)]="mobileNumber" (keyup)="MobileNumberCheckFalse()"
           placeholder="Enter Your Mobile Number" class="primary-input mt-3" maxlength="10" (keypress)="numberOnly($event)" type="text"></ion-input>
-        <p class="small" style="color: #EB154B;" *ngIf="ValidNumber">Enter Valid Mobile Number</p>
+        <p class="small mx-1" style="color: #EB154B;" *ngIf="ValidNumber">Enter Valid Mobile Number</p>
 
-        <ion-input style="color: #000000;" [(ngModel)]="password" (keyup)="passwordCheckFalse()"
-          placeholder="Enter Your Password" class="primary-input mt-3" type="password"></ion-input>
-        <p class="small" style="color:#EB154B;" *ngIf="passwordCheck">Your password must be 8-16
+
+
+          <div style="height: 45px !important;width:100%;margin: auto;" class="row primary-input">
+            <div  class="col-10 passInput">
+              <ion-input (keyup)="passwordCheckFalse()" [type]="passwordType" [(ngModel)]="password"  placeholder="Enter Your Password"> </ion-input>
+            </div>
+            
+            <div class="col-2">
+              <button style="background-color:transparent !important;margin-top: 47% !important;" class="eyebutton" (click)="onClick()">
+                <i style="color:black" class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                <i style="color:black" class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+              </button>
+            </div>
+          </div>
+
+
+        <!-- <ion-input style="color: #000000;" [(ngModel)]="password" (keyup)="passwordCheckFalse()"
+          placeholder="Enter Your Password" class="primary-input mt-3" type="password"></ion-input> -->
+
+
+        <p class="small mx-1" style="color:#EB154B;" *ngIf="passwordCheck">Your password must be 8-16
           characters, and include at least one lowercse letter, one uppercase letter, and a number</p>
+
+
       </div>
     </div>
 
@@ -45,7 +65,7 @@
   <div class="ion-margin-top">
     <ion-button class="secondarySmallBtn" [disabled]="otp == '' " expand="block" color="none" (click)="signUp()">SIGN UP</ion-button>
 
-    <p class="text-center small mt-4">Already User ? <b (click)="signin()">Sign In</b></p>
+    <p class="text-center small mt-4">Already User? <b (click)="signin()">Sign In</b></p>
   </div>
 
 </div>

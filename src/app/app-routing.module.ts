@@ -76,6 +76,11 @@ const routes: Routes = [
     path: 'username-login',
     loadChildren: () => import('./username-login/username-login.module').then( m => m.UsernameLoginPageModule)
   },
+  {
+    path: 'ref',
+    loadChildren: () => import('./reference/reference.module').then( m => m.ReferencePageModule)
+  },
+
 
 
 ];

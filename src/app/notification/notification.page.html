@@ -1,41 +1,39 @@
 <!------------ Header  ---------------->
 <ion-toolbar color="light">
-  <ion-buttons slot="start">
-    <ion-menu-button style="margin-top:15px;color:#121212" autoHide="false">
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 7H19" stroke="#121212" stroke-width="2" stroke-linecap="round" />
-        <path d="M5 12H15" stroke="#121212" stroke-width="2" stroke-linecap="round" />
-        <path d="M5 17H11" stroke="#121212" stroke-width="2" stroke-linecap="round" />
-      </svg>
-    </ion-menu-button>
-  </ion-buttons>
-
-
 
   <div class="row">
-    <div class="col-4">
-      <h5 style="color:#121212;margin-top:10px"><b></b></h5>
+    <div class="col-6">
+      <ion-buttons slot="start">
+        <ion-menu-button style="margin-top:15px;color:#121212" autoHide="false">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7H19" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+            <path d="M5 12H15" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+            <path d="M5 17H11" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </ion-menu-button>
+      </ion-buttons>
     </div>
-    <div class="col-8  mx-5" style="text-align: right;width: 100%;">
-      <svg (click)="searchPage()" style="margin-left: -2%;margin-top:5% !important;margin-right:25%" width="25"
-        height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="11" cy="11" r="7" stroke="#121212" stroke-width="2" />
-        <path
-          d="M11 8C10.606 8 10.2159 8.0776 9.85195 8.22836C9.48797 8.37913 9.15726 8.6001 8.87868 8.87868C8.6001 9.15726 8.37913 9.48797 8.22836 9.85195C8.0776 10.2159 8 10.606 8 11"
-          stroke="#CCD2E3" stroke-width="2" stroke-linecap="round" />
-        <path d="M20 20L17 17" stroke="#121212" stroke-width="2" stroke-linecap="round" />
-      </svg>
 
-      <!-- <ion-badge style="border-radius: 50%;margin-left: -14px ;color:#eb154b ;font-size: 12px;" color="light">10</ion-badge> -->
-
+    <div class="col-6 ion-text-right">
+      <svg (click)="searchPage()" style="margin-top:12% !important;margin-right:2%" width="35"
+      height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="7" stroke="#121212" stroke-width="2" />
+      <path
+        d="M11 8C10.606 8 10.2159 8.0776 9.85195 8.22836C9.48797 8.37913 9.15726 8.6001 8.87868 8.87868C8.6001 9.15726 8.37913 9.48797 8.22836 9.85195C8.0776 10.2159 8 10.606 8 11"
+        stroke="#CCD2E3" stroke-width="2" stroke-linecap="round" />
+      <path d="M20 20L17 17" stroke="#121212" stroke-width="2" stroke-linecap="round" />
+    </svg>
     </div>
+
   </div>
+
+
 </ion-toolbar>
 
 <ion-content>
   <div class="container">
-    <h3 class="mx-2"><b>Notifications</b>
-      <svg style="margin:3px;" width="26" height="26" viewBox="0 0 24 24" fill="none"
+    <h3 class="mx-2">
+      <svg style="margin:0px;" width="28" height="28" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z"
@@ -45,67 +43,45 @@
           fill="black" />
         <circle cx="18" cy="6" r="2.5" fill="#eb154b" stroke="#eb154b" />
       </svg>
+      <b>Notifications</b>
+      
     </h3>
 
 
 
 
-
-    <!-- <div *ngFor="let  notification of notificationList" class=" card mt-4">
-      <div class="row">
-        <div class="col-12">
-          <img style="margin: 7px;" height="30px" width="30px" src="{{notification.store_logo}}" alt="">
-          <span>{{notification.store_name}}/ {{notification.product}}</span>
-        </div>
-        <div class="col-12">
-          <p style="font-size:10px;margin:10px;">{{notification.description}}</p>
-        </div>
-        <div class="col-12 ion-text-right">
-          <span class="ion-text-center p-2"><span style="font-size: 14px;padding: 5px;" class="dot">{{notification.offer}}%
-              off</span></span>
-    
-        </div>
-        <div class="col-12 ion-text-right">
-          <span class="ion-text-center p-2"><span style="font-size: 14px;padding: 5px;" class="dot">{{notification.offer}}%
-              off</span></span>
-    
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="col-5">
-          <p style="margin:5px;font-size: 10px;">
-            <svg width="20" height="18" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M18.9116 3.42642V1.81135H20.5929V0.22644H15.5488V1.81135H17.2302V3.42642C14.4736 3.62501 12.0001 4.79208 10.1921 6.56606H3.66697V8.15044H8.86504C8.52445 8.65143 8.22897 9.18153 7.98298 9.73587H1.98559V11.3202H7.43614C7.30667 11.8354 7.21773 12.3647 7.1739 12.9057H0.304199V14.4906H7.17384C7.21773 15.0316 7.30662 15.5609 7.43608 16.0755H1.98559V17.6604H7.98298C8.22891 18.2147 8.52445 18.7448 8.86504 19.2453H3.66697V20.8302H10.1921C12.1821 22.7828 14.9784 24 18.0709 24C24.0971 24 28.9999 19.3786 28.9999 13.6981C28.9999 8.28426 24.5466 3.83242 18.9116 3.42642ZM27.2799 14.4906C26.8787 18.666 23.3412 22.0006 18.9116 22.3787V20.8302H17.2302V22.3787C12.8005 22.0006 9.26297 18.666 8.86184 14.4906H10.5046V12.9057H8.86184C9.26297 8.73025 12.8005 5.39566 17.2302 5.01756V6.56606H18.9116V5.01756C23.3412 5.39566 26.8787 8.73025 27.2799 12.9057H25.6371V14.4906H27.2799Z"
-                fill="#5F5F5F" />
-              <path
-                d="M15.5488 13.6981C15.5488 15.009 16.6802 16.0755 18.0709 16.0755C19.0607 16.0755 19.9634 15.5259 20.3705 14.6754L23.1146 8.94385L17.0341 11.5305C16.1318 11.9144 15.5488 12.7652 15.5488 13.6981ZM17.7258 12.9751L19.7527 12.1128L18.838 14.0235C18.7021 14.3072 18.401 14.4906 18.0709 14.4906C17.6074 14.4906 17.2302 14.1351 17.2302 13.6981C17.2302 13.387 17.4248 13.1032 17.7258 12.9751Z"
-                fill="#5F5F5F" />
-            </svg>
-            {{notification.offer_time}}
-          </p>
-        </div>
-        <div class="col-7">
-          <p style="margin:5px;font-size: 10px;" class="product-name">Date/Time: <span>
-            {{notification.created_at | date:'MMMM d'}}/ {{notification.created_at | date: 'h :mm a'}}</span></p>
-        </div>
-      </div>
-    </div> -->
-
-    <div *ngFor="let  notification of notificationList" class="card mt-4">
+    <div *ngFor="let  notification of notificationList" class="card mt-1">
       <div class="row" style="font-size: 14px; padding: 10px;">
-        <p>Alarm Set For Product <b>{{notification.product | titlecase}}</b> For Store
+        <p>Alarm Set For Product <b style="font-size: 12px;">{{notification.product | titlecase}}</b> For Store
           <span><b>{{notification.store_name | titlecase}}</b> </span></p>
         <p [ngClass]='notification.other_offer == "" ? "show" : "hidden"'><b>Offer :</b>{{notification.offer |
           titlecase}}%</p>
-        <p [ngClass]='notification.other_offer != "" ? "show" : "hidden"'><b>Offer :</b>{{notification.other_offer |
+        <p style="font-size: 12px;" [ngClass]='notification.other_offer != "" ? "show" : "hidden"'><b>Offer :</b>{{notification.other_offer |
           titlecase}}</p>
         <div class="row" style="font-size: 10px;">
           <div class="col-6">
-            <b>
-              <p>{{notification.created_at | slice:02:10}}</p>
-            </b>
+            
+            <div class="row">
+              <div class="col-3">
+                <svg style="margin-top: -20% !important;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="6" width="18" height="15" rx="2" stroke="black"/>
+                  <path d="M3 10C3 8.11438 3 7.17157 3.58579 6.58579C4.17157 6 5.11438 6 7 6H17C18.8856 6 19.8284 6 20.4142 6.58579C21 7.17157 21 8.11438 21 10H3Z" fill="black"/>
+                  <path d="M7 3L7 6" stroke="black" stroke-linecap="round"/>
+                  <path d="M17 3L17 6" stroke="black" stroke-linecap="round"/>
+                  <rect x="7" y="12" width="4" height="2" rx="0.5" fill="black"/>
+                  <rect x="7" y="16" width="4" height="2" rx="0.5" fill="black"/>
+                  <rect x="13" y="12" width="4" height="2" rx="0.5" fill="black"/>
+                  <rect x="13" y="16" width="4" height="2" rx="0.5" fill="black"/>
+                  </svg>
+              </div>
+
+              <div class="col-9">
+                <b>
+                  <p style="font-size: 12px;">{{notification.created_at | slice:02:10}}</p>
+                </b>
+              </div>
+            </div>
+           
           </div>
           <div class="col-6 ion-text-right">
             <svg width="16" height="16" viewBox="0 0 25 23" fill="none">
@@ -113,7 +89,7 @@
                 d="M23.0058 6.00409C22.8742 6.00485 22.7437 5.97963 22.6219 5.92986C22.5001 5.8801 22.3892 5.80677 22.2958 5.71409L18.2958 1.71409C18.1075 1.52579 18.0017 1.27039 18.0017 1.00409C18.0017 0.73779 18.1075 0.482395 18.2958 0.294092C18.4841 0.105788 18.7395 0 19.0058 0C19.2721 0 19.5275 0.105788 19.7158 0.294092L23.7158 4.29409C23.8095 4.38705 23.8839 4.49766 23.9347 4.61951C23.9855 4.74137 24.0116 4.87208 24.0116 5.00409C24.0116 5.1361 23.9855 5.26681 23.9347 5.38867C23.8839 5.51053 23.8095 5.62113 23.7158 5.71409C23.6224 5.80677 23.5115 5.8801 23.3897 5.92986C23.2679 5.97963 23.1374 6.00485 23.0058 6.00409ZM1.7158 5.71409L5.7158 1.71409C5.9041 1.52579 6.00989 1.27039 6.00989 1.00409C6.00989 0.73779 5.9041 0.482395 5.7158 0.294092C5.52749 0.105788 5.2721 0 5.0058 0C4.7395 0 4.4841 0.105788 4.2958 0.294092L0.295798 4.29409C0.20207 4.38705 0.127676 4.49766 0.0769072 4.61951C0.0261385 4.74137 0 4.87208 0 5.00409C0 5.1361 0.0261385 5.26681 0.0769072 5.38867C0.127676 5.51053 0.20207 5.62113 0.295798 5.71409C0.388761 5.80782 0.499362 5.88221 0.621222 5.93298C0.743081 5.98375 0.873786 6.00989 1.0058 6.00989C1.13781 6.00989 1.26852 5.98375 1.39038 5.93298C1.51223 5.88221 1.62284 5.80782 1.7158 5.71409ZM12.0058 13.0041C11.808 13.0041 11.6147 13.0627 11.4502 13.1726C11.2858 13.2825 11.1576 13.4387 11.0819 13.6214C11.0062 13.8041 10.9864 14.0052 11.025 14.1992C11.0636 14.3932 11.1588 14.5713 11.2987 14.7112C11.4385 14.8511 11.6167 14.9463 11.8107 14.9849C12.0047 15.0235 12.2058 15.0037 12.3885 14.928C12.5712 14.8523 12.7274 14.7241 12.8373 14.5597C12.9472 14.3952 13.0058 14.2019 13.0058 14.0041C13.0058 13.7389 12.9004 13.4845 12.7129 13.297C12.5254 13.1094 12.271 13.0041 12.0058 13.0041ZM22.0058 12.0041C22.0058 13.9819 21.4193 15.9153 20.3205 17.5598C19.2217 19.2043 17.6599 20.486 15.8326 21.2429C14.0054 21.9998 11.9947 22.1978 10.0549 21.8119C8.11509 21.4261 6.33326 20.4737 4.93473 19.0752C3.53621 17.6766 2.5838 15.8948 2.19795 13.955C1.81209 12.0152 2.01013 10.0045 2.767 8.17726C3.52388 6.35 4.8056 4.78821 6.4501 3.6894C8.09459 2.59058 10.028 2.00409 12.0058 2.00409C14.658 2.00409 17.2015 3.05766 19.0769 4.93302C20.9522 6.80839 22.0058 9.35193 22.0058 12.0041ZM15.0058 14.0041C15.0041 13.3851 14.8109 12.7819 14.4529 12.277C14.0948 11.7722 13.5893 11.3904 13.0058 11.1841V7.00409C13.0058 6.73888 12.9004 6.48452 12.7129 6.29699C12.5254 6.10945 12.271 6.00409 12.0058 6.00409C11.7406 6.00409 11.4862 6.10945 11.2987 6.29699C11.1112 6.48452 11.0058 6.73888 11.0058 7.00409V11.1841C10.4869 11.3675 10.0285 11.6902 9.68072 12.1167C9.33294 12.5433 9.10919 13.0573 9.03397 13.6025C8.95874 14.1476 9.03494 14.703 9.25421 15.2078C9.47349 15.7126 9.8274 16.1473 10.2772 16.4644C10.727 16.7816 11.2554 16.9688 11.8045 17.0058C12.3536 17.0427 12.9023 16.9279 13.3905 16.6738C13.8787 16.4198 14.2877 16.0364 14.5726 15.5655C14.8575 15.0946 15.0073 14.5544 15.0058 14.0041Z"
                 fill="#0D0D0D" />
             </svg>
-            <b>{{notification.created_at | slice:11:20}}</b>
+            <b style="font-size: 12px;">&nbsp; {{notification.created_at | slice:11:20}}</b>
           </div>
         </div>
       </div>
@@ -125,17 +101,35 @@
           <span><b>{{notification.product | titlecase}}</b> </span></p>
         <div class="row" style="font-size: 10px;">
           <div class="col-6">
-            <b>
-              <p>{{notification.created_at | slice:02:10}}</p>
-            </b>
+            <div class="row">
+              <div class="col-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="6" width="18" height="15" rx="2" stroke="black"/>
+                  <path d="M3 10C3 8.11438 3 7.17157 3.58579 6.58579C4.17157 6 5.11438 6 7 6H17C18.8856 6 19.8284 6 20.4142 6.58579C21 7.17157 21 8.11438 21 10H3Z" fill="black"/>
+                  <path d="M7 3L7 6" stroke="black" stroke-linecap="round"/>
+                  <path d="M17 3L17 6" stroke="black" stroke-linecap="round"/>
+                  <rect x="7" y="12" width="4" height="2" rx="0.5" fill="black"/>
+                  <rect x="7" y="16" width="4" height="2" rx="0.5" fill="black"/>
+                  <rect x="13" y="12" width="4" height="2" rx="0.5" fill="black"/>
+                  <rect x="13" y="16" width="4" height="2" rx="0.5" fill="black"/>
+                  </svg>
+              </div>
+
+              <div class="col-9 mt-1">
+                <b>
+                  <p style="font-size: 12px;">{{notification.created_at | slice:02:10}}</p>
+                </b>
+              </div>
+            </div>
+            
           </div>
-          <div class="col-6 ion-text-right">
+          <div class="col-6 ion-text-right mt-1">
             <svg width="16" height="16" viewBox="0 0 25 23" fill="none">
               <path
                 d="M23.0058 6.00409C22.8742 6.00485 22.7437 5.97963 22.6219 5.92986C22.5001 5.8801 22.3892 5.80677 22.2958 5.71409L18.2958 1.71409C18.1075 1.52579 18.0017 1.27039 18.0017 1.00409C18.0017 0.73779 18.1075 0.482395 18.2958 0.294092C18.4841 0.105788 18.7395 0 19.0058 0C19.2721 0 19.5275 0.105788 19.7158 0.294092L23.7158 4.29409C23.8095 4.38705 23.8839 4.49766 23.9347 4.61951C23.9855 4.74137 24.0116 4.87208 24.0116 5.00409C24.0116 5.1361 23.9855 5.26681 23.9347 5.38867C23.8839 5.51053 23.8095 5.62113 23.7158 5.71409C23.6224 5.80677 23.5115 5.8801 23.3897 5.92986C23.2679 5.97963 23.1374 6.00485 23.0058 6.00409ZM1.7158 5.71409L5.7158 1.71409C5.9041 1.52579 6.00989 1.27039 6.00989 1.00409C6.00989 0.73779 5.9041 0.482395 5.7158 0.294092C5.52749 0.105788 5.2721 0 5.0058 0C4.7395 0 4.4841 0.105788 4.2958 0.294092L0.295798 4.29409C0.20207 4.38705 0.127676 4.49766 0.0769072 4.61951C0.0261385 4.74137 0 4.87208 0 5.00409C0 5.1361 0.0261385 5.26681 0.0769072 5.38867C0.127676 5.51053 0.20207 5.62113 0.295798 5.71409C0.388761 5.80782 0.499362 5.88221 0.621222 5.93298C0.743081 5.98375 0.873786 6.00989 1.0058 6.00989C1.13781 6.00989 1.26852 5.98375 1.39038 5.93298C1.51223 5.88221 1.62284 5.80782 1.7158 5.71409ZM12.0058 13.0041C11.808 13.0041 11.6147 13.0627 11.4502 13.1726C11.2858 13.2825 11.1576 13.4387 11.0819 13.6214C11.0062 13.8041 10.9864 14.0052 11.025 14.1992C11.0636 14.3932 11.1588 14.5713 11.2987 14.7112C11.4385 14.8511 11.6167 14.9463 11.8107 14.9849C12.0047 15.0235 12.2058 15.0037 12.3885 14.928C12.5712 14.8523 12.7274 14.7241 12.8373 14.5597C12.9472 14.3952 13.0058 14.2019 13.0058 14.0041C13.0058 13.7389 12.9004 13.4845 12.7129 13.297C12.5254 13.1094 12.271 13.0041 12.0058 13.0041ZM22.0058 12.0041C22.0058 13.9819 21.4193 15.9153 20.3205 17.5598C19.2217 19.2043 17.6599 20.486 15.8326 21.2429C14.0054 21.9998 11.9947 22.1978 10.0549 21.8119C8.11509 21.4261 6.33326 20.4737 4.93473 19.0752C3.53621 17.6766 2.5838 15.8948 2.19795 13.955C1.81209 12.0152 2.01013 10.0045 2.767 8.17726C3.52388 6.35 4.8056 4.78821 6.4501 3.6894C8.09459 2.59058 10.028 2.00409 12.0058 2.00409C14.658 2.00409 17.2015 3.05766 19.0769 4.93302C20.9522 6.80839 22.0058 9.35193 22.0058 12.0041ZM15.0058 14.0041C15.0041 13.3851 14.8109 12.7819 14.4529 12.277C14.0948 11.7722 13.5893 11.3904 13.0058 11.1841V7.00409C13.0058 6.73888 12.9004 6.48452 12.7129 6.29699C12.5254 6.10945 12.271 6.00409 12.0058 6.00409C11.7406 6.00409 11.4862 6.10945 11.2987 6.29699C11.1112 6.48452 11.0058 6.73888 11.0058 7.00409V11.1841C10.4869 11.3675 10.0285 11.6902 9.68072 12.1167C9.33294 12.5433 9.10919 13.0573 9.03397 13.6025C8.95874 14.1476 9.03494 14.703 9.25421 15.2078C9.47349 15.7126 9.8274 16.1473 10.2772 16.4644C10.727 16.7816 11.2554 16.9688 11.8045 17.0058C12.3536 17.0427 12.9023 16.9279 13.3905 16.6738C13.8787 16.4198 14.2877 16.0364 14.5726 15.5655C14.8575 15.0946 15.0073 14.5544 15.0058 14.0041Z"
                 fill="#0D0D0D" />
             </svg>
-            <b>{{notification.created_at | slice:11:20}}</b>
+            <b style="font-size: 12px;"> &nbsp; {{notification.created_at | slice:11:20}}</b>
           </div>
         </div>
       </div>

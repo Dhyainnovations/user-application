@@ -82,4 +82,9 @@ export class WelcomePage implements OnInit {
   signup(){
     this.router.navigate(['/register'])
   }
+
+  guide(){
+    this.router.navigate(['/ref'])
+  }
+
 }

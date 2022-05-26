@@ -50,6 +50,8 @@ export class SigninPage implements OnInit {
   lat: number;
   lon: number;
   userInfo = null;
+  password: string;
+  show: boolean = true;
 
   constructor(public modalCtrl: ModalController, private router: Router, private http: HttpService,
     private toastCtrl: ToastController, route: ActivatedRoute, public platform: Platform) {
@@ -75,6 +77,7 @@ export class SigninPage implements OnInit {
   ngOnInit() {
     this.MobInputcolSize = 12;
     this.OtpInputcolSize = 12;
+    this.password = 'password'
     // this.geolocation.getCurrentPosition().then((resp) => {
     //   this.lat = resp.coords.latitude
     //   this.lon = resp.coords.longitude
@@ -106,6 +109,17 @@ export class SigninPage implements OnInit {
   timerVisible: any = false
   resendOTPIfClicked: any = false;
 
+
+
+  onClick() {
+    if (this.password === 'password') {
+      this.password = 'number';
+      this.show = true;
+    } else {
+      this.password = 'password';
+      this.show = false;
+    }
+  }
 
 
   //OTP-Countdown-Timer

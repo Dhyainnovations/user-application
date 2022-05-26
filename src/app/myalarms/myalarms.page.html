@@ -15,7 +15,7 @@
       <h5 style="color:#121212;margin-top:10px"><b></b></h5>
     </div>
     <div class="col-8 mt-2 mx-4" style="text-align: right;width: 90%;">
-        <svg (click)="notification()" style="margin:3px;" width="26" height="35" viewBox="0 0 24 24" fill="none" >
+        <svg (click)="notification()" style="margin:3px;" width="30" height="34" viewBox="0 0 24 24" fill="none" >
           <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z" fill="black"/>
           <path d="M9 17C9 17.394 9.0776 17.7841 9.22836 18.1481C9.37913 18.512 9.6001 18.8427 9.87868 19.1213C10.1573 19.3999 10.488 19.6209 10.8519 19.7716C11.2159 19.9224 11.606 20 12 20C12.394 20 12.7841 19.9224 13.1481 19.7716C13.512 19.6209 13.8427 19.3999 14.1213 19.1213C14.3999 18.8427 14.6209 18.512 14.7716 18.1481C14.9224 17.7841 15 17.394 15 17L12 17H9Z" fill="black"/>
           <circle cx="18" cy="6" r="2.5" fill="#eb154b" stroke="#eb154b"/>
@@ -57,12 +57,12 @@
     <div *ngFor="let alarm of storeAlarmList" class=" card mt-4">
       <div class="row">
         <div class="col-10">
-          <img style="margin: 7px;" height="30px" width="30px"    [src]="alarm.store_logo" alt="">
-          <span>{{alarm.store_name}}</span>
+          <img style="margin: 7px;border-radius: 4px;" height="50px" width="50px"    [src]="alarm.store_logo" alt="">
+          <span style="font-size: 16px;">{{alarm.store_name}}</span>
         </div>
-        <div class="col-2 mt-2">
+        <div class="col-2 mt-3">
           <span style="margin-left: -5px;" class="dot ion-text-center"><span style="margin-top:15px;font-size: 14px;">
-              <svg (click)="deleteStoreAlarm(alarm.tbid)"  width="16" height="16"
+              <svg style="margin:5px !important;" (click)="deleteStoreAlarm(alarm.tbid)"  width="16" height="16"
                 fill="white" class="bi bi-trash" viewBox="0 0 16 16">
                 <path
                   d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -81,13 +81,13 @@
     <div *ngFor="let alarm of productAlarmList" class=" card mt-4">
       <div class="row">
         <div class="col-10">
-          <img style="margin: 7px;" height="30px" width="30px" src="{{alarm.store_logo}}" alt="">
-          <span style="font-size: 14px;">{{alarm.store_name}} / </span> <span style="font-size: 14px;">
+          <img style="margin: 7px;border-radius: 4px;" height="50px" width="50px" src="{{alarm.store_logo}}" alt="">
+          <span style="font-size: 16px;">{{alarm.store_name}} / </span> <span style="font-size: 16px;">
             {{alarm.product}}</span>
         </div>
-        <div class="col-2 mt-2">
+        <div class="col-2 mt-3">
           <span style="margin-left: -5px;" class="dot ion-text-center"><span style="margin-top:15px;font-size: 14px;">
-              <svg (click)="deleteProductAlarm(alarm.tbid)"  width="16" height="16"
+              <svg style="margin:5px !important" (click)="deleteProductAlarm(alarm.tbid)"  width="16" height="16"
                 fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                 <path
                   d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />

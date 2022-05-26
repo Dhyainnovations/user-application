@@ -101,6 +101,11 @@ export class Tab2Page {
     this.router.navigate(['/notification'])
   }
 
+
+  myAlarms(){
+    this.router.navigate(['/myalarms'])
+  }
+
   forProduct() {
     this.forproduct = true;
     this.forstore = false;

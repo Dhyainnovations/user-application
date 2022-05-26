@@ -17,7 +17,7 @@
       <h5 style="color:#121212;margin-top:10px"><b></b></h5>
     </div>
     <div class="col-8 mt-2 mx-4" style="text-align: right;width: 90%;">
-      <svg (click)="notification()" style="margin:3px;" width="26" height="26" viewBox="0 0 24 24" fill="none"
+      <svg (click)="notification()" style="margin:3px;" width="30" height="34" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z"
@@ -61,21 +61,24 @@
   </div>
 
   <div *ngIf="searchResultVisible">
-    <ion-list *ngFor="let product of searchProductList |filter:searchProductName">
-      <div class="row">
-        <div class="col-10">
-          <p (click)="selectSearchProduct(product.product_name)" class="pt-2 px-3 mt-3">{{product.product_name}}</p>
+    <div class="container">
+      <ion-list *ngFor="let product of searchProductList |filter:searchProductName">
+        <div class="row">
+          <div class="col-10">
+            <p (click)="selectSearchProduct(product.product_name)" class="pt-2 px-3 mt-3">{{product.product_name}}</p>
+          </div>
+          <div class="col-2 mt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z" />
+            </svg>
+          </div>
         </div>
-        <div class="col-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-left"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z" />
-          </svg>
-        </div>
-      </div>
-
-    </ion-list>
+  
+      </ion-list>
+    </div>
+    
   </div>
 
 
@@ -97,38 +100,38 @@
           </div>
 
 
-          <div class="row">
+          <div class="row ">
             <div class="col-5" style="margin-top: -5px;">
               <img id="product_img" height="75px" width="95px" src="{{product_image}}" alt="">
               <div class="row">
                 <div class="col-12">
-                  <p style="color: #000000;margin-left:20px;font-size: 15px;">{{product}} <br><span
+                  <p style="color: #000000;margin-left:20px;font-size: 14px;">{{product}} <span
                       style="color: #EB154B;"> ({{product_weight}}&nbsp;{{product_unit}}) </span></p>
                 </div>
 
               </div>
             </div>
-            <div class="col-7">
+            <div style="margin-left: -5%;" class="col-7 ion-text-left">
 
-              <p *ngIf="IfOfferPresent"><b>Price :</b><span id="offer" style="font-size: 15px;text-decoration: line-through">
+              <p *ngIf="IfOfferPresent"><b>Price :</b><span id="offer" style="font-size: 12px;text-decoration: line-through">
                   
-                  {{totalPrice}}</span>&nbsp; <span style="margin: 0;padding:0;font-size:15px;">{{offer_price}}</span>
+                  {{totalPrice}}/-</span>&nbsp; <span style="margin: 0;padding:0;font-size:12px;">{{offer_price}}/-</span>
               </p>
 
-              <p *ngIf="IfOtherOfferPresent"><span id="offer" style="font-size: 15px;">
-                  <b>Price:</b> {{totalPrice}}</span></p>
+              <p *ngIf="IfOtherOfferPresent"><span id="offer" style="font-size: 14px;">
+                  <b>Price:</b> {{totalPrice}}/-</span></p>
 
-              <p *ngIf="IfOtherOfferPresent"><span id="offer" style="font-size: 15px;">
+              <p *ngIf="IfOtherOfferPresent"><span id="offer" style="font-size: 14px;">
                   <b>Offer :</b>
                   {{other_offer}}</span></p>
-              <p style="font-size: 15px;" *ngIf="IfOfferPresent">
+              <p style="font-size: 14px;" *ngIf="IfOfferPresent">
                 <b>Offer :</b>
-                {{offer}}%
+                <span style="font-size: 12px;" >{{offer}}%</span>
               </p>
 
-              <p id="offer" style="font-size: 15px;">
+              <p id="offer" style="font-size: 14px;">
                 <b>Offer Time :</b><br>
-                {{offer_end_time}}<br>
+                <span  style="font-size: 12px;">{{offer_end_time}}<br></span>
               </p>
               <div class="col-2 pb-2" *ngIf="ProductDelivery">
                 <div>
@@ -147,7 +150,7 @@
         <div id="social-media-icon-div">
           <p *ngIf="Socialdetailavailable" class="small text-center" style="margin-top: 5px;margin-bottom: -10px;">No
             Contact Information Available</p>
-          <div class="row p-2">
+          <div class="row d-flex justify-content-center p-2">
             <div class="col-2" *ngIf="contact_status"> <a href="tel:{{contact}}"><svg width="16" height="16"
                   fill="currentColor" class="bi bi-telephone social-icon" viewBox="0 0 16 16">
                   <path

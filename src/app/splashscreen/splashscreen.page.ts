@@ -21,7 +21,7 @@ export class SplashscreenPage implements OnInit {
         if(userdetails){
           this.router.navigate(['/tabs'])
         }else{
-          this.router.navigate(['/welcome'])
+          this.router.navigate(['/ref'])
         }
       },2200)
     });

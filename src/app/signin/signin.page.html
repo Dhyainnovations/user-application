@@ -45,8 +45,24 @@
     </div>
 
 
-    <ion-input (click)="enterOtp()" [(ngModel)]="otp" placeholder="Enter OTP" type="password" class="primary-input">
-    </ion-input>
+    <div class="container">
+      <div class="row primary-input">
+        <div class="col-10">
+          <ion-input  (click)="enterOtp()" [type]="password" [(ngModel)]="otp"   placeholder="Enter OTP"> </ion-input>
+        </div>
+        
+        <div class="col-2">
+          <button style="background-color:transparent !important;margin-top: 47% !important;" class="eyebutton" (click)="onClick()">
+            <i style="color:black" class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+            <i style="color:black" class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+          </button>
+        </div>
+      </div>
+     </div>
+
+
+    <!-- <ion-input (click)="enterOtp()" [(ngModel)]="otp" placeholder="Enter OTP" type="password" class="primary-input">
+    </ion-input> -->
     <div class="mt-4">
       <ion-button style="width: 98%;margin: auto;" color="none" class="secondarySmallBtn" [disabled]="otp == '' " expand="block" (click)="signIn()"><b>LOGIN</b></ion-button>
 

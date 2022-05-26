@@ -15,17 +15,33 @@
       <div class="col-{{MobInputcolSize}}">
         <ion-input style="color: #000000;" [(ngModel)]="mailid" placeholder="Enter Your Mail ID" class="primary-input"
           (keyup)="mailidCheckFalse()"></ion-input>
-        <p class="small" style="color: #EB154B;" *ngIf="isNotEmailAlert">Enter Valid Mail ID</p>
+        <p class="small mx-1" style="color: #EB154B;" *ngIf="isNotEmailAlert">Enter Valid Mail ID</p>
       </div>
     </div>
 
 
-    <ion-input style="color: #000000;" [(ngModel)]="password" placeholder="Enter Your Password" type="password"
-      class="primary-input"></ion-input>
-    <p class="small ion-text-left mx-1" (click)="forgotpassword()">Forgot Password ?</p>
+    <div class="container">
+      <div class="row primary-input">
+        <div class="col-10">
+          <ion-input   [type]="passwordType" [(ngModel)]="password"   placeholder="Enter Your Password"> </ion-input>
+        </div>
+        
+        <div class="col-2">
+          <button style="background-color:transparent !important;margin-top: 47% !important;" class="eyebutton" (click)="onClick()">
+            <i style="color:black" class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+            <i style="color:black" class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+          </button>
+        </div>
+      </div>
+     </div>
+
+
+    <!-- <ion-input style="color: #000000;" [(ngModel)]="password" placeholder="Enter Your Password" type="password"
+      class="primary-input"></ion-input> -->
+    <p style="color:#554f4f" class="small ion-text-left mx-1" (click)="forgotpassword()">Forgot Password ?</p>
     <div class="ion-margin-top">
       <ion-button expand="block" class="secondarySmallBtn" color="none" (click)="signIn()" ><b>LOGIN</b></ion-button>
-      <p class="text-center small mt-3">New User ? <b (click)="signup()">Sign Up</b></p>
+      <p class="text-center small mt-3">New User? <b (click)="signup()">Sign Up</b></p>
     </div>
   </div>
   <div *ngIf="VerifyAccount">

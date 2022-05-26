@@ -14,6 +14,8 @@ export class AppComponent {
 
   notificationsDelayInSeconds: string = "2";
 
+
+  
   public appPages = [
     { title: 'Home', url: '/tabs/tab1',icon: 'assets/icon/home.PNG'},
     { title: 'Set Alarm', url: '/tabs/tab2', icon:'assets/icon/setalarm.png' },

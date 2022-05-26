@@ -13,8 +13,8 @@
   <div class="row">
     <div class="col-4">
     </div>
-    <div class="col-8 mt-3 mx-3" style="text-align: right;width: 90%;">
-      <svg (click)="notification()" style="margin:3px;" width="26" height="50" viewBox="0 0 24 24" fill="none">
+    <div class="col-8 mt-3 mx-4" style="text-align: right;width: 90%;">
+      <svg (click)="notification()" style="margin:3px;" width="30" height="34" viewBox="0 0 24 24" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M13.7942 3.29494C13.2296 3.10345 12.6258 3 12 3C9.1535 3 6.7622 5.14032 6.44786 7.96942L6.19605 10.2356L6.1896 10.2933C6.06065 11.417 5.69489 12.5005 5.11646 13.4725L5.08667 13.5222L4.50863 14.4856C3.98408 15.3599 3.7218 15.797 3.77842 16.1559C3.8161 16.3946 3.93899 16.6117 4.12435 16.7668C4.40292 17 4.9127 17 5.93224 17H18.0678C19.0873 17 19.5971 17 19.8757 16.7668C20.061 16.6117 20.1839 16.3946 20.2216 16.1559C20.2782 15.797 20.0159 15.3599 19.4914 14.4856L18.9134 13.5222L18.8836 13.4725C18.4273 12.7059 18.1034 11.8698 17.9236 10.9994C15.1974 10.9586 13 8.73592 13 6C13 5.00331 13.2916 4.07473 13.7942 3.29494ZM16.2741 4.98883C16.0999 5.28551 16 5.63109 16 6C16 6.94979 16.6621 7.74494 17.5499 7.94914C17.4205 6.82135 16.9608 5.80382 16.2741 4.98883Z"
           fill="black" />
@@ -30,7 +30,7 @@
 <ion-content class="bg-class" [fullscreen]="true">
   <div class="container">
     <div style="margin-top: 5% !important" class="signin-div  ">
-      <div class="row">
+      <div class="row mt-2">
         <div class="col-6 ">
           <h4 style="margin:10px; color: #0d0d0d;"><b>Support</b></h4>
         </div>
@@ -65,9 +65,9 @@
       <div class="form-group">
         <label style="margin-left: 5px;" for="exampleFormControlTextarea1">Problem Description :</label>
         <textarea [(ngModel)]="problemDescription"
-          style="background-color: transparent;border: 1px solid rgb(158, 150, 150);" class="form-control"
+          style="background-color: transparent;border: 1px solid rgb(158, 150, 150);width: 98%;margin: auto;" class="form-control"
           id="exampleFormControlTextarea1" maxlength="100" rows="3"></textarea>
-        <div class="pt-2" [ngClass]='description != "Not Available" ? "show" : "hidden"'>
+        <div class="pt-3 mx-1" [ngClass]='description != "Not Available" ? "show" : "hidden"'>
           <p style="font-size: 12px;" >Description :
             {{description}} <span>/ {{time}}</span></p>
         </div>
@@ -84,5 +84,5 @@
     </div>
   </div>
 
-
+<p style="font-size:10px" class="ion-text-center p-4 mt-3;">2020 &#169; COSMOZEAL TECH LLP</p>
 </ion-content>

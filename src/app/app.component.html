@@ -7,18 +7,18 @@
         
           <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item  routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <img  class="mb-3" style="height:45px;width:43px;color:#fff;margin:5px" [src]="p.icon" alt="">
+              <img  class="mb-3" style="height:40px;width:40px;color:#fff;margin:5px" [src]="p.icon" alt="">
               <ion-label class="mb-2">{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false" >
             <ion-item (click)="logout()" >
-              <img  style="height:45px;width:43px;color:#fff;margin:6px" src="assets/icon/logout.png" alt="">
+              <img  style="height:40px;width:40px;color:#fff;margin:6px" src="assets/icon/logout.png" alt="">
               <ion-label style="margin-top: 10px !important;">Logout</ion-label>
             </ion-item>
           </ion-menu-toggle>
 
-          <p  style="margin-left: 67%;margin-top: -2%;font-size: 10px;" class="ion-text-left">v11.0.4</p>
+          <p  style="margin-left: 67%;margin-top: -2%;font-size: 10px;" class="ion-text-left">v10.2.1</p>
         </ion-list>
       </ion-content>
       
@@ -26,3 +26,5 @@
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>
+
+<app-reference [slides]="slides"></app-reference>

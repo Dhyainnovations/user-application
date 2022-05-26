@@ -21,6 +21,7 @@ export class RegisterPage implements OnInit {
     private toastCtrl: ToastController, route: ActivatedRoute, public platform: Platform) { }
 
   ngOnInit() {
+    this.passwordType = 'password'
   }
   signin() {
     this.router.navigate(['/welcome'])
@@ -30,12 +31,26 @@ export class RegisterPage implements OnInit {
   mobileNumber: any;
   password: any;
 
+  passwordType: string;
+  show: boolean = true;
   //Check
   isNotEmailAlert: any;
   ValidNumber: any;
   passwordCheck: any;
   passwordRes: any;
   isUserNameAlert: any;
+
+
+  onClick() {
+    if (this.passwordType === 'password') {
+      this.passwordType = 'text';
+      this.show = true;
+    } else {
+      this.passwordType = 'password';
+      this.show = false;
+    }
+  }
+
 
 
   navigateHome(){

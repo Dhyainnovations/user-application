@@ -75,6 +75,8 @@ export class SearchpagePage implements OnInit {
 
   clearData() {
     this.searchProductName = " ";
+    this.cardVisible = false
+
 
   }
   IfOfferPresent: any;

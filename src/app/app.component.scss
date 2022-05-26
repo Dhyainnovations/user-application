@@ -117,9 +117,11 @@ ion-menu ion-content {
     background: var(--ion-color-light)!important;
    
   }
-  
+  ion-item.hover{
+    --background: linear-gradient(135deg, #1abcf7, #11f1bd) !important;
+  }
   ion-item.selected {
-    // background: linear-gradient(135deg, #1abcf7, #11f1bd) !important;
+    
     ion-label{
       color:var(--ion-color-primary) !important;
       font-size: 18px;
@@ -138,6 +140,7 @@ ion-menu ion-content {
     --background: transparent !important;
     margin: 10px !important;
   }
+ 
   ion-label{
     margin: 8px !important;
     margin-top: -6px !important;
