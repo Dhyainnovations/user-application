@@ -240,6 +240,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   }
   Socialdetailavailable: any;
   PopupModel: any;
+  location:any;
   //------------- Read one Offer(card) Api call ------------//
   singleCard(product) {
     this.deliveryAvilability = ''
@@ -278,6 +279,13 @@ export class Tab1Page implements OnInit, OnDestroy {
         } else {
           this.instagram_status = true
         }
+        if(response.records.location != "" && response.records.location != "null" &&  response.records.location != null){
+          this.location_present=true
+          this.location=response.records.location
+        }else{
+          this.location_present=false
+        }
+        
         if (response.records.delivery_availability == "1") {
           this.ProductDelivery = true
         } else if (response.records.delivery_availability == "") {
@@ -351,6 +359,7 @@ export class Tab1Page implements OnInit, OnDestroy {
       this.youtube = response.records.youtube
       this.facebook = response.records.facebook
       this.storeID = response.records.tbid
+
       this.storeLogo = response.records.store_logo
       this.deliveryAvilability = response.records.delivery_availability
       this.whatsapp_href = "https://wa.me/" + response.records.whatsapp
@@ -575,7 +584,7 @@ export class Tab1Page implements OnInit, OnDestroy {
     this.locationsList = [];
     this.http.get('/list_location').subscribe((response: any) => {
       for (var i = 0; i <= response.records.length; i++) {
-        if (response.records[i].city != null) {
+        if (response.records[i].city != "null" && response.records[i].city !=null) {
           this.locationsList.push(response.records[i])
         }
       }
@@ -585,7 +594,7 @@ export class Tab1Page implements OnInit, OnDestroy {
 
   }
 
-
+  location_present:any;
   locationBased() {
     // this.city = data.category;
     if (this.city == "All") {

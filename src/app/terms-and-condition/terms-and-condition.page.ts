@@ -16,7 +16,7 @@ export class TermsAndConditionPage implements OnInit {
       
   }
   acceptConditions(){
-    this.router.navigate(['/signuppage'],{queryParams:{checkbox:true}})
+    this.router.navigate(['/register'],{queryParams:{checkbox:true}})
     
   }
 

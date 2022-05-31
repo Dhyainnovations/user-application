@@ -71,6 +71,7 @@ export class OtpPage implements OnInit {
 
   resendOtpVisible: any = false;
   intervalId = 0;
+  
   otpseconds: any = "60";
   clearTimer() { clearInterval(this.intervalId); }
   start() { this.countDown(); }

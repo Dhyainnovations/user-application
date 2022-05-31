@@ -18,10 +18,17 @@ import { OtpPage } from '../otp/otp.page';
 export class RegisterPage implements OnInit {
 
   constructor(public modalCtrl: ModalController, private router: Router, private http: HttpService,
-    private toastCtrl: ToastController, route: ActivatedRoute, public platform: Platform) { }
+    private toastCtrl: ToastController, private route: ActivatedRoute, public platform: Platform) {
+      this.route.queryParams.subscribe(queryParams => {
+        this.checked = queryParams['checkbox'];
+  
+  
+      });
+     }
 
   ngOnInit() {
-    this.passwordType = 'password'
+    this.passwordType = 'password';
+    this.acceptCondtion = false;
   }
   signin() {
     this.router.navigate(['/welcome'])
@@ -30,16 +37,16 @@ export class RegisterPage implements OnInit {
   mailid: any;
   mobileNumber: any;
   password: any;
-
+  acceptCondtion: any = false;
   passwordType: string;
   show: boolean = true;
-  //Check
+  checked: any = "false";
   isNotEmailAlert: any;
   ValidNumber: any;
   passwordCheck: any;
   passwordRes: any;
   isUserNameAlert: any;
-
+  acceptCondtioned: any = true;
 
   onClick() {
     if (this.passwordType === 'password') {
@@ -51,7 +58,13 @@ export class RegisterPage implements OnInit {
     }
   }
 
+  checkboxClick(e) {
+    console.log(e.detail.checked);
+    this.acceptCondtion = false;
+    this.checked = e.detail.checked;
+    this.acceptCondtioned = true;
 
+  }
 
   navigateHome(){
     this.router.navigate(['/welcome'])
@@ -106,6 +119,11 @@ export class RegisterPage implements OnInit {
     }
   }
 
+  navigatetoTermsandCondition(){
+    this.router.navigate(['/terms-and-condition'])
+  }
+
+
   mailidCheckFalse() {
     this.isNotEmailAlert = false;
   }
@@ -121,11 +139,18 @@ export class RegisterPage implements OnInit {
     this.passwordCheck = false
   }
   signUp() {
+    if (this.checked == false || this.checked == undefined) {
+      this.acceptCondtion = true;
+      this.acceptCondtioned = false;
+    } else {
+      this.acceptCondtion = false;
+      this.acceptCondtioned = true;
+    }
     this.passwordChecking();
     this.usernameCheck();
     this.EmailCheck();
     this.mobileNumberCheck();
-    if (this.isNotEmailAlert == false && this.isUserNameAlert == false && this.ValidNumber == false && this.passwordCheck == false) {
+    if (this.isNotEmailAlert == false && this.isUserNameAlert == false && this.ValidNumber == false && this.passwordCheck == false && this.checked == true) {
       var Data = {
         user_name: this.username,
         email_id: this.mailid,

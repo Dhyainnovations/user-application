@@ -97,7 +97,7 @@ export class UsernameLoginPage implements OnInit {
         password: this.password
       }
       this.http.post('/user_google_signin', Data).subscribe((response: any) => {
-        console.log(response);
+        console.log(response.message);
         if (response.message == "Your Account Deactivated.") {
           this.LoginAccount = false;
           this.VerifyAccount = true;
@@ -120,8 +120,6 @@ export class UsernameLoginPage implements OnInit {
         }
 
         if (response.message == "Invalid Credentials") {
-          this.LoginAccount = false;
-          this.VerifyAccount = true;
           const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',

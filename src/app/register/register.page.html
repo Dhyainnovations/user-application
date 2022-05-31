@@ -59,6 +59,24 @@
       </div>
     </div>
 
+    <div class="row">
+
+      <div class="col-1 tearmsAndCondition mt-3" >
+        <ion-checkbox (ionChange)="checkboxClick($event)" color="success" [checked]="checked"></ion-checkbox>
+      </div>
+      <div  class="col-11 mt-2">
+        <p style="margin-left: -2px;font-size: 11px" class="tearmsAndCondition" (click)="navigatetoTermsandCondition()()" 
+          *ngIf="acceptCondtioned">By
+          creating an account, you agree to our
+          <b> Terms & Conditions</b>
+        </p>
+        <p style="margin-left: -2px;" class="tearmsAndCondition" (click)="navigatetoTermsandCondition()()" 
+          *ngIf="acceptCondtion" style="color:red;font-size: 11px;">By
+          creating an account, you agree to our
+          <b> Terms & Conditions</b>
+        </p>
+      </div>
+    </div>
 
 
 

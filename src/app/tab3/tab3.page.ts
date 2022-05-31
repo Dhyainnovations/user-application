@@ -249,7 +249,7 @@ export class Tab3Page {
     this.http.get('/list_location',).subscribe((response: any) => {
       console.log(response);
       for (var i = 0; i <= response.records.length; i++) {
-        if (response.records[i].city != null) {
+        if (response.records[i].city != null && response.records[i].city != "null") {
           this.locationsList.push(response.records[i])
         }
       }
