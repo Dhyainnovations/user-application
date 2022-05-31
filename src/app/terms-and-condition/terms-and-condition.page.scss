@@ -1,0 +1,23 @@
+.accept-btn{
+    border-radius: 5px !important;
+    background: linear-gradient(to left, #23a6d5
+  0%, #23d5ab
+  100%);
+    color:#fff;
+    border:1px solid #fff;
+    margin-bottom: 10px !important;
+    margin:20px 
+}
+ion-content {
+    background-color:#fff !important;
+    // background: linear-gradient(to bottom, darkturquoise
+    // 0%, #d1f2e7
+    // 100%) !important;
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  }
+  

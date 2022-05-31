@@ -70,6 +70,11 @@ export class SupportPage implements OnInit {
     this.router.navigate(['/notification'])
   }
 
+
+  navigateTo(){
+    this.router.navigate(['t-and-c'])
+  }
+
   submit() {
 
     const Data = {
