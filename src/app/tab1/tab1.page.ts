@@ -191,7 +191,7 @@ export class Tab1Page implements OnInit, OnDestroy {
     const obj = {
       store_name: this.storeID,
       spam_msg: this.spam_msg,
-      store: this.store,
+      store: this.storeNa,
       offer_denied: this.offer_denied,
       others: this.others
     }
