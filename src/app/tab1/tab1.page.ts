@@ -116,6 +116,9 @@ export class Tab1Page implements OnInit, OnDestroy {
   loginUserNumber: any;
   loginUserLocation: any;
   loginUserToken: any;
+  newDateFormat: any;
+  offerTimer: any;
+  noTimer: any;
 
   UserDetails() {
     this.getSelectCategory();
@@ -238,11 +241,20 @@ export class Tab1Page implements OnInit, OnDestroy {
       })
     });
   }
+
+
+  ngAfterViewInit() {
+    
+
+  }
+
   Socialdetailavailable: any;
   PopupModel: any;
   location:any;
   //------------- Read one Offer(card) Api call ------------//
   singleCard(product) {
+   
+
     this.deliveryAvilability = ''
     const o = product
     this.isvisible = true;
@@ -325,13 +337,58 @@ export class Tab1Page implements OnInit, OnDestroy {
           this.IfOfferPresent = false;
           this.IfOtherOfferPresent = true;
         }
+        
       }
       console.log(response.records);
       this.scrollToTop();
     }, (error: any) => {
       console.log(error);
     });
+
+    var i = 0;
+    var initTime = new Date();
+    console.log(i);
+    
+   const DecTimer = setInterval(() => {
+      i++;
+
+        var newDateFormat = new Date(this.offerTime).valueOf()
+        console.log(this.offerTime);
+        
+        console.log(newDateFormat);
+        
+        
+        var noTime = this.offerTime.split(' ')[0];
+        console.log(noTime);
+        
+        var newTime = new Date(newDateFormat - i * 1000);
+        console.log(newTime);
+        
+        var testTime = newTime.toLocaleTimeString()
+        this.offerTimer = testTime;
+        this.noTimer = noTime;
+
+       
+    }, 1000);
+
+    this.clearTime = DecTimer
   }
+  
+  clearTime :any = null;
+
+  navigateHome() {
+    clearInterval(this.clearTime)
+    this.clearTime = null;
+
+    this.storedetailsVisible = false;
+    this.isvisible = false;
+    this.productDetails = true;
+    this.PopupModel = false;
+
+  }
+
+   
+
   whatsapp_status: any = false;
   instagram_status: any = false;
   website_status: any = false;
@@ -382,13 +439,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   instagram_href: any;
   facebook_href: any;
   //-------------- Navigate to dashboard ----------//
-  navigateHome() {
-    this.storedetailsVisible = false;
-    this.isvisible = false;
-    this.productDetails = true;
-    this.PopupModel = false;
-
-  }
+ 
 
 
 
@@ -662,6 +713,8 @@ export class Tab1Page implements OnInit, OnDestroy {
   }
 
 
+
+  
 
 
 }

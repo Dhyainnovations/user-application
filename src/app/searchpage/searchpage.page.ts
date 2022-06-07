@@ -43,6 +43,9 @@ export class SearchpagePage implements OnInit {
   facebook_status: any;
   youtube_status: any;
   contact_status: any;
+  newDateFormat: any;
+  offerTimer: any;
+  noTimer: any;
   //-------------- Navigate to notificationPage ----------//
   notification() {
     this.router.navigate(['/notification'])
@@ -71,7 +74,15 @@ export class SearchpagePage implements OnInit {
     }, (error: any) => {
       console.log(error);
     });
+
+    var i = 0;
+    var initTime = new Date();
+    console.log(i);
+    
+   
   }
+
+  clearTime :any = null;
 
   clearData() {
     this.searchProductName = " ";
@@ -95,6 +106,7 @@ export class SearchpagePage implements OnInit {
   Socialdetailavailable:any;
   ProductDelivery:any;
   selectSearchProduct(name) {
+    clearInterval(this.clearTime)
     this.searchProductName = name;
     const s = name;
     console.log(s);
@@ -174,6 +186,18 @@ export class SearchpagePage implements OnInit {
       this.HideOfferCard=true;
     });
 
+    var i = 0;
+
+    const DecTimer = setInterval(() => {
+      i++;
+        var newDateFormat = new Date(this.offer_end_time).valueOf()
+        var noTime = this.offer_end_time.split(' ')[0];        
+        var newTime = new Date(newDateFormat - i * 1000);        
+        var testTime = newTime.toLocaleTimeString()
+        this.offerTimer = testTime;
+        this.noTimer = noTime;
+    }, 1000);
+    this.clearTime = DecTimer
 
   }
 
